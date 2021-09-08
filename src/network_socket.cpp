@@ -18,6 +18,11 @@ namespace AsyncBsdSocketLib
         int _returnCode = close(mDescriptor);
         bool _result = _returnCode > -1;
 
-        return _result; 
+        return _result;
+    }
+
+    NetworkSocket::~NetworkSocket() noexcept
+    {
+        TryClose();
     }
 }

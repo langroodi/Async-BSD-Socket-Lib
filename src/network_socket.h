@@ -13,15 +13,19 @@ namespace AsyncBsdSocketLib
     private:
         const std::string mIpAddress;
         const uint16_t mPort;
-        int mDescriptor;
 
     protected:
+        /// @brief Socket descriptor
+        int mDescriptor;
+
         /// @brief Constructor
         /// @param ipAddress Binding IPv4 address
         /// @param port Binding port number
         NetworkSocket(std::string ipAddress, uint16_t port);
-    
+
     public:
+        virtual ~NetworkSocket() noexcept;
+
         /// @brief Socket descriptor
         /// @returns A non-negative number if the socket has been already set up
         int Descriptor() const noexcept;
