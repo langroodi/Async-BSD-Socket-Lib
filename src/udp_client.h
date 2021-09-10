@@ -7,6 +7,7 @@
 
 namespace AsyncBsdSocketLib
 {
+    /// @brief UDP client which can play both client and listener roles
     class UdpClient : public NetworkSocket
     {
     private:

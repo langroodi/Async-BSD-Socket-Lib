@@ -35,10 +35,6 @@ namespace AsyncBsdSocketLib
         /// @returns True if the socket is successfully set up; otherwise false
         virtual bool TrySetup() noexcept = 0;
 
-        /// @brief Try to make the socket non-blocking
-        /// @returns True if the flag setting was successful; otherwise false
-        bool TrySetNonblock() noexcept;
-
         /// @brief Try to close the socket
         /// @returns True if the socket closed successfully; otherwise false
         virtual bool TryClose() noexcept;
