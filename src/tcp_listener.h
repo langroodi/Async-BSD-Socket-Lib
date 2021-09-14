@@ -27,9 +27,7 @@ namespace AsyncBsdSocketLib
 
         bool TrySetup() noexcept override;
 
-        /// @brief Connection descriptor
-        /// @returns A non-negative value if there is a valid connection; otherwise -1
-        int Connection() const noexcept;
+        int Connection() const noexcept override;
 
         /// @brief Try to accept a client to form a connection
         /// @returns True if the client is successfully accepted; otherwise false

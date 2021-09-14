@@ -13,7 +13,7 @@ namespace AsyncBsdSocketLib
     {
     private:
         bool mIsConnected;
-    
+
     public:
         TcpClient() = delete;
 
@@ -21,6 +21,8 @@ namespace AsyncBsdSocketLib
         /// @param ipAddress Server IP address
         /// @param port Server port number
         TcpClient(std::string ipAddress, uint16_t port);
+
+        int Connection() const noexcept override;
 
         bool TrySetup() noexcept override;
 

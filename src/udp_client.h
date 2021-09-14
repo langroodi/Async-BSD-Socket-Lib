@@ -28,6 +28,8 @@ namespace AsyncBsdSocketLib
         /// @param nicIpAddress Multocast traffic network interface IP address
         UdpClient(std::string ipAddress, uint16_t port, std::string nicIpAddress);
 
+        int Connection() const noexcept override;
+
         bool TrySetup() noexcept override;
 
         /// @brief Try to send a byte array to a destination

@@ -31,6 +31,10 @@ namespace AsyncBsdSocketLib
         /// @returns A non-negative number if the socket has been already set up
         int Descriptor() const noexcept;
 
+        /// @brief Connection descriptor for sending and receiving
+        /// @returns A non-negative value if there is a valid connection; otherwise -1
+        virtual int Connection() const noexcept = 0;
+
         /// @brief Try to setup the socket
         /// @returns True if the socket is successfully set up; otherwise false
         virtual bool TrySetup() noexcept = 0;
