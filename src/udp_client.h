@@ -32,26 +32,27 @@ namespace AsyncBsdSocketLib
 
         bool TrySetup() noexcept override;
 
-        /// @brief Try to send a byte array to a destination
+        /// @brief Send a byte array to a destination
         /// @tparam N Send buffer size
         /// @param buffer Send buffer byte array
         /// @param ipAddress Destination IP address
         /// @param port Destination port number
-        /// @returns True if the sending was successful; otherwise false
+        /// @returns Size of sent bytes (-1 in case of sending failed)
         template <std::size_t N>
-        bool TrySend(
+        ssize_t Send(
             const std::array<uint8_t, N> &buffer,
             std::string ipAddress,
             uint16_t port) const noexcept;
 
-        /// @brief Try to receive a byte array from a source
+        /// @brief Receive a byte array from a source
         /// @tparam N Receive buffer size
         /// @param buffer Receive buffer byte array
         /// @param ipAddress Source IP address
         /// @param port Source port number
-        /// @returns True if the receiving was successful; otherwise false
+        /// @returns Size of received bytes (-1 in case of receiving failed)
+        /// @warning Due to edge-triggered polling, starvation can occur
         template <std::size_t N>
-        bool TryReceive(
+        ssize_t Receive(
             std::array<uint8_t, N> &buffer,
             std::string ipAddress,
             uint16_t port) const noexcept;

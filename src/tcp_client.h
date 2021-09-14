@@ -12,6 +12,8 @@ namespace AsyncBsdSocketLib
     class TcpClient : public NetworkSocket
     {
     private:
+        static const int cBacklog{3};
+
         bool mIsConnected;
 
     public:
@@ -34,19 +36,20 @@ namespace AsyncBsdSocketLib
         /// @returns True if the client is successfully connected; otherwise false
         bool TryConnect() noexcept;
 
-        /// @brief Try to send a byte array to the server
+        /// @brief Send a byte array to the connected client
         /// @tparam N Send buffer size
         /// @param buffer Send buffer byte array
-        /// @returns True if the sending was successful; otherwise false
+        /// @returns Size of sent bytes (-1 in case of sending failed)
         template <std::size_t N>
-        bool TrySend(const std::array<uint8_t, N> &buffer) const noexcept;
+        ssize_t Send(const std::array<uint8_t, N> &buffer) const noexcept;
 
-        /// @brief Try to receive a byte array from the server
+        /// @brief Receive a byte array from the connected client
         /// @tparam N Receive buffer size
         /// @param buffer Receive buffer byte array
-        /// @returns True if the receiving was successful; otherwise false
+        /// @returns Size of received bytes (-1 in case of receiving failed)
+        /// @warning Due to edge-triggered polling, starvation can occur
         template <std::size_t N>
-        bool TryReceive(std::array<uint8_t, N> &buffer) const noexcept;
+        ssize_t Receive(std::array<uint8_t, N> &buffer) const noexcept;
     };
 }
 

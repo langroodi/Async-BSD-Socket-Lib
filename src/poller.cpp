@@ -184,18 +184,21 @@ namespace AsyncBsdSocketLib
             auto _iterator = mListeners.find(_fd);
             if (_iterator != mListeners.end())
             {
+                // Launching the callback
                 (_iterator->second)();
             }
 
             _iterator = mSenders.find(_fd);
             if (_iterator != mSenders.end())
             {
+                // Launching the callback
                 (_iterator->second)();
             }
 
             _iterator = mReceivers.find(_fd);
             if (_iterator != mReceivers.end())
             {
+                // Launching the callback
                 (_iterator->second)();
             }
         }

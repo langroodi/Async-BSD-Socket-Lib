@@ -15,6 +15,12 @@ namespace AsyncBsdSocketLib
 
     bool NetworkSocket::TryClose() noexcept
     {
+        // Check the descriptor validity
+        if (mDescriptor == -1)
+        {
+            return false;
+        }
+
         int _returnCode = close(mDescriptor);
         bool _result = _returnCode > -1;
 

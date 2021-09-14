@@ -11,8 +11,9 @@ namespace AsyncBsdSocketLib
     class TcpListener : public NetworkSocket
     {
     private:
+        struct sockaddr_in mAddress;
         int mConnection;
-    
+
     public:
         TcpListener() = delete;
 
@@ -25,27 +26,32 @@ namespace AsyncBsdSocketLib
         /// @param port Listen port number
         TcpListener(std::string ipAddress, uint16_t port);
 
-        bool TrySetup() noexcept override;
-
         int Connection() const noexcept override;
+
+        bool TrySetup() noexcept override;
 
         /// @brief Try to accept a client to form a connection
         /// @returns True if the client is successfully accepted; otherwise false
         bool TryAccept() noexcept;
 
-        /// @brief Try to send a byte array to the connected client
+        /// @brief Send a byte array to the connected client
         /// @tparam N Send buffer size
         /// @param buffer Send buffer byte array
-        /// @returns True if the sending was successful; otherwise false
+        /// @returns Size of sent bytes (-1 in case of sending failed)
         template <std::size_t N>
-        bool TrySend(const std::array<uint8_t, N> &buffer) const noexcept;
+        ssize_t Send(const std::array<uint8_t, N> &buffer) const noexcept;
 
-        /// @brief Try to receive a byte array from the connected client
+        /// @brief Receive a byte array from the connected client
         /// @tparam N Receive buffer size
         /// @param buffer Receive buffer byte array
-        /// @returns True if the receiving was successful; otherwise false
+        /// @returns Size of received bytes (-1 in case of receiving failed)
+        /// @warning Due to edge-triggered polling, starvation can occur
         template <std::size_t N>
-        bool TryReceive(std::array<uint8_t, N> &buffer) const noexcept;
+        ssize_t Receive(std::array<uint8_t, N> &buffer) const noexcept;
+
+        /// @brief Try to make the current connection (if exists) non-block
+        /// @returns True if the non-blocking flag is set successfully; otherwise false
+        bool TryMakeConnectionNonblock() noexcept;
     };
 }
 

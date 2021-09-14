@@ -11,11 +11,13 @@ namespace AsyncBsdSocketLib
     /// @brief TCP/IP network socket
     class NetworkSocket
     {
-    private:
+    protected:
+        /// @brief Listening/Connecting IP address for server/client
         const std::string mIpAddress;
+
+        /// @brief Listening/Connecting port number for server/client
         const uint16_t mPort;
 
-    protected:
         /// @brief Socket descriptor
         int mDescriptor;
 
