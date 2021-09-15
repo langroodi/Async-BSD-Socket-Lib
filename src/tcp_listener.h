@@ -1,6 +1,7 @@
 #ifndef TCP_LISTENER_H
 #define TCP_LISTENER_H
 
+#include <netinet/in.h>
 #include <array>
 #include "./network_socket.h"
 

@@ -1,5 +1,4 @@
 #include <sys/socket.h>
-#include <netinet/in.h>
 #include <arpa/inet.h>
 #include <fcntl.h>
 #include "./tcp_listener.h"
@@ -95,7 +94,6 @@ namespace AsyncBsdSocketLib
     template <std::size_t N>
     ssize_t TcpListener::Receive(std::array<uint8_t, N> &buffer) const noexcept
     {
-        std::string _result;
         ssize_t _result = recv(mConnection, buffer.data, N, 0);
 
         return _result;

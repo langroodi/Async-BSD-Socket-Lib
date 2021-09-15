@@ -148,12 +148,12 @@ namespace AsyncBsdSocketLib
 
         // Convert IP address
         char _ipAddress[INET_ADDRSTRLEN];
-        inet_pton(AF_INET, &(_sourceAddress.sin_addr), _ipAddress, INET_ADDRSTRLEN);
-        ipAddress{_ipAddress};
+        inet_ntop(AF_INET, &(_sourceAddress.sin_addr), _ipAddress, INET_ADDRSTRLEN);
+        ipAddress = std::string(_ipAddress);
 
         // Convert port number
         port = htons(_sourceAddress.sin_port);
 
-        return _result
+        return _result;
     }
 }
