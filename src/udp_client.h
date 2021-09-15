@@ -12,7 +12,9 @@ namespace AsyncBsdSocketLib
     {
     private:
         std::string mNicIpAddress;
+        std::string mMulticastIpAddress;
         bool mIsMulticast;
+        bool mShareAddress;
 
     public:
         UdpClient() = delete;
@@ -25,8 +27,15 @@ namespace AsyncBsdSocketLib
         /// @brief Multicast UDP socket constructor
         /// @param ipAddress Binding IP address
         /// @param port Binding port number
-        /// @param nicIpAddress Multocast traffic network interface IP address
-        UdpClient(std::string ipAddress, uint16_t port, std::string nicIpAddress);
+        /// @param nicIpAddress Multicast traffic network interface IP address
+        /// @param multicastIpAddress Multicast group traffic IP address
+        /// @param shareAddress Indicates whether to share the multicast listening address or not
+        UdpClient(
+            std::string ipAddress,
+            uint16_t port,
+            std::string nicIpAddress,
+            std::string multicastIpAddress,
+            bool shareAddress = true);
 
         int Connection() const noexcept override;
 
@@ -54,8 +63,8 @@ namespace AsyncBsdSocketLib
         template <std::size_t N>
         ssize_t Receive(
             std::array<uint8_t, N> &buffer,
-            std::string ipAddress,
-            uint16_t port) const noexcept;
+            std::string &ipAddress,
+            uint16_t &port) const noexcept;
     };
 }
 
