@@ -12,8 +12,7 @@ namespace AsyncBsdSocketLib
     class TcpClient : public NetworkSocket
     {
     private:
-        static const int cBacklog{3};
-
+        struct sockaddr_in mAddress;
         bool mIsConnected;
 
     public:
@@ -26,11 +25,11 @@ namespace AsyncBsdSocketLib
 
         int Connection() const noexcept override;
 
-        bool TrySetup() noexcept override;
-
         /// @brief Inidicates whether the client is connected or not
         /// @returns True if the client is connected; otherwise false
         bool IsConnected() const noexcept;
+
+        bool TrySetup() noexcept override;
 
         /// @brief Try to connect to the server
         /// @returns True if the client is successfully connected; otherwise false

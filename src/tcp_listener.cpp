@@ -1,7 +1,6 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <unistd.h>
 #include <fcntl.h>
 #include "./tcp_listener.h"
 
@@ -44,10 +43,8 @@ namespace AsyncBsdSocketLib
 
             if (_result)
             {
-
+                mAddress.sin_addr.s_addr = inet_addr(mIpAddress.c_str());
                 mAddress.sin_family = AF_INET;
-                inet_pton(
-                    mAddress.sin_family, mIpAddress.c_str(), &(mAddress.sin_addr));
                 mAddress.sin_port = htons(mPort);
 
                 //! \remark Binding the socket to the port

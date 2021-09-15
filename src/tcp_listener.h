@@ -11,6 +11,8 @@ namespace AsyncBsdSocketLib
     class TcpListener : public NetworkSocket
     {
     private:
+        static const int cBacklog{3};
+        
         struct sockaddr_in mAddress;
         int mConnection;
 
