@@ -51,3 +51,21 @@ add_library(
   ${source_dir}/udp_client.h
   ${source_dir}/udp_client.cpp
 )
+
+if(build_tests)
+  enable_testing()
+
+  add_executable(
+    async_bsd_socket_lib_test
+    ${test_dir}/network_socket_test.cpp
+  )
+
+  target_link_libraries(
+    async_bsd_socket_lib_test
+    gtest_main
+    async_bsd_socket_lib
+  )
+
+  include(GoogleTest)
+  gtest_discover_tests(async_bsd_socket_lib_test)
+ endif()

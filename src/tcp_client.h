@@ -1,6 +1,7 @@
 #ifndef TCP_CLIENT_H
 #define TCP_CLIENT_H
 
+#include <netinet/in.h>
 #include <array>
 #include <stdexcept>
 #include "./network_socket.h"
