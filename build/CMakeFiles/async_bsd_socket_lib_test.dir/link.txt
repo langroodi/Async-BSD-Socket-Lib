@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--export-dynamic -rdynamic CMakeFiles/async_bsd_socket_lib_test.dir/test/network_socket_test.cpp.o -o async_bsd_socket_lib_test  lib/libgtest_maind.a libasync_bsd_socket_lib.a lib/libgtestd.a -lpthread 
