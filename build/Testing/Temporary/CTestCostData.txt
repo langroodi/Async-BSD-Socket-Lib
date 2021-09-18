@@ -1,0 +1,4 @@
+NetworkSocketTest.TcpClientConstructor 1 0.00249171
+NetworkSocketTest.TcpListenerConstructor 1 0.00199271
+NetworkSocketTest.UdpClientConstructor 1 0.00201211
+---
