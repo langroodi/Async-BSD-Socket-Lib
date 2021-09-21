@@ -1,6 +1,0 @@
-NetworkSocketTest.TcpClientConstructor 1 0.00259228
-NetworkSocketTest.TcpListenerConstructor 1 0.00245908
-NetworkSocketTest.UdpClientConstructor 1 0.00195936
-TcpCommunicationTest.Connection 1 0.00204097
-TcpCommunicationTest.ServerSendClientReceive 1 0.00526407
----
