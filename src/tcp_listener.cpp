@@ -1,4 +1,3 @@
-#include <sys/socket.h>
 #include <arpa/inet.h>
 #include <fcntl.h>
 #include "./tcp_listener.h"
@@ -74,27 +73,6 @@ namespace AsyncBsdSocketLib
                 (socklen_t *)&_addressLength);
 
         bool _result = (mConnection >= 0);
-
-        return _result;
-    }
-
-    template <std::size_t N>
-    ssize_t TcpListener::Send(const std::array<uint8_t, N> &buffer) const noexcept
-    {
-        bool _result =
-            send(
-                mConnection,
-                buffer.data,
-                N,
-                MSG_NOSIGNAL);
-
-        return _result;
-    }
-
-    template <std::size_t N>
-    ssize_t TcpListener::Receive(std::array<uint8_t, N> &buffer) const noexcept
-    {
-        ssize_t _result = recv(mConnection, buffer.data, N, 0);
 
         return _result;
     }

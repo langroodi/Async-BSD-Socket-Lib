@@ -1,6 +1,7 @@
 #ifndef TCP_CLIENT_H
 #define TCP_CLIENT_H
 
+#include <sys/socket.h>
 #include <netinet/in.h>
 #include <array>
 #include <stdexcept>
@@ -41,7 +42,17 @@ namespace AsyncBsdSocketLib
         /// @param buffer Send buffer byte array
         /// @returns Size of sent bytes (-1 in case of sending failed)
         template <std::size_t N>
-        ssize_t Send(const std::array<uint8_t, N> &buffer) const noexcept;
+        ssize_t Send(const std::array<uint8_t, N> &buffer) const noexcept
+        {
+            bool _result =
+                send(
+                    mDescriptor,
+                    buffer.data(),
+                    N,
+                    MSG_NOSIGNAL);
+
+            return _result;
+        }
 
         /// @brief Receive a byte array from the connected client
         /// @tparam N Receive buffer size
@@ -49,7 +60,12 @@ namespace AsyncBsdSocketLib
         /// @returns Size of received bytes (-1 in case of receiving failed)
         /// @warning Due to edge-triggered polling, starvation can occur
         template <std::size_t N>
-        ssize_t Receive(std::array<uint8_t, N> &buffer) const noexcept;
+        ssize_t Receive(std::array<uint8_t, N> &buffer) const noexcept
+        {
+            ssize_t _result = recv(mDescriptor, buffer.data(), N, 0);
+
+            return _result;
+        }
     };
 }
 

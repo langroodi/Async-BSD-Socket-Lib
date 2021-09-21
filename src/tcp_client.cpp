@@ -1,4 +1,3 @@
-#include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include "./tcp_client.h"
@@ -45,26 +44,5 @@ namespace AsyncBsdSocketLib
                             sizeof(mAddress)) == 0);
 
         return mIsConnected;
-    }
-
-    template <std::size_t N>
-    ssize_t TcpClient::Send(const std::array<uint8_t, N> &buffer) const noexcept
-    {
-        bool _result =
-            send(
-                mDescriptor,
-                buffer.data,
-                N,
-                MSG_NOSIGNAL);
-
-        return _result;
-    }
-
-    template <std::size_t N>
-    ssize_t TcpClient::Receive(std::array<uint8_t, N> &buffer) const noexcept
-    {
-        ssize_t _result = recv(mDescriptor, buffer.data, N, 0);
-
-        return _result;
     }
 }

@@ -1,6 +1,7 @@
 #ifndef TCP_LISTENER_H
 #define TCP_LISTENER_H
 
+#include <sys/socket.h>
 #include <netinet/in.h>
 #include <array>
 #include "./network_socket.h"
@@ -13,7 +14,7 @@ namespace AsyncBsdSocketLib
     {
     private:
         static const int cBacklog{3};
-        
+
         struct sockaddr_in mAddress;
         int mConnection;
 
@@ -42,7 +43,17 @@ namespace AsyncBsdSocketLib
         /// @param buffer Send buffer byte array
         /// @returns Size of sent bytes (-1 in case of sending failed)
         template <std::size_t N>
-        ssize_t Send(const std::array<uint8_t, N> &buffer) const noexcept;
+        ssize_t Send(const std::array<uint8_t, N> &buffer) const noexcept
+        {
+            bool _result =
+                send(
+                    mConnection,
+                    buffer.data(),
+                    N,
+                    MSG_NOSIGNAL);
+
+            return _result;
+        }
 
         /// @brief Receive a byte array from the connected client
         /// @tparam N Receive buffer size
@@ -50,7 +61,12 @@ namespace AsyncBsdSocketLib
         /// @returns Size of received bytes (-1 in case of receiving failed)
         /// @warning Due to edge-triggered polling, starvation can occur
         template <std::size_t N>
-        ssize_t Receive(std::array<uint8_t, N> &buffer) const noexcept;
+        ssize_t Receive(std::array<uint8_t, N> &buffer) const noexcept
+        {
+            ssize_t _result = recv(mConnection, buffer.data(), N, 0);
+
+            return _result;
+        }
 
         /// @brief Try to make the current connection (if exists) non-block
         /// @returns True if the non-blocking flag is set successfully; otherwise false

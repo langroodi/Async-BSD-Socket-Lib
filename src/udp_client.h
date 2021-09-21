@@ -1,8 +1,8 @@
 #ifndef UDP_CLIENT_H
 #define UDP_CLIENT_H
 
-#include <array>
 #include <sys/socket.h>
+#include <array>
 #include "./network_socket.h"
 
 namespace AsyncBsdSocketLib
