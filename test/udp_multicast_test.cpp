@@ -5,19 +5,28 @@
 
 namespace AsyncBsdSocketLib
 {
-    class UdpUnicastTest : public testing::Test
+    class UdpMulticastTest : public testing::Test
     {
     protected:
-        const std::string cLocalhost = "127.0.0.1";
-        const uint16_t cAlicePort = 8090;
-        const uint16_t cBobPort = 8091;
+        const std::string cMulticastAddress = "224.0.0.0";
+        const std::string cLoopbackNic = "127.0.0.1";
+        const uint16_t cAlicePort = 8092;
+        const uint16_t cBobPort = 8093;
 
         UdpClient Alice;
         UdpClient Bob;
         bool SuccessfulSetup;
 
-        UdpUnicastTest() : Alice(cLocalhost, cAlicePort),
-                           Bob(cLocalhost, cBobPort)
+        UdpMulticastTest() : Alice(
+                                 cMulticastAddress,
+                                 cAlicePort,
+                                 cLoopbackNic,
+                                 cMulticastAddress),
+                             Bob(
+                                 cMulticastAddress,
+                                 cBobPort,
+                                 cLoopbackNic,
+                                 cMulticastAddress)
         {
         }
 
@@ -38,12 +47,12 @@ namespace AsyncBsdSocketLib
         }
     };
 
-    TEST_F(UdpUnicastTest, CheckSetup)
+    TEST_F(UdpMulticastTest, AliceBobTalk)
     {
         EXPECT_TRUE(SuccessfulSetup);
     }
 
-    TEST_F(UdpUnicastTest, Echo)
+    TEST_F(UdpMulticastTest, Echo)
     {
         const std::size_t cBufferSize = 16;
 
@@ -53,7 +62,7 @@ namespace AsyncBsdSocketLib
 
         // Evaluate sending
         ssize_t _sentBytes =
-            Alice.Send(_sendBuffer, cLocalhost, cBobPort);
+            Alice.Send(_sendBuffer, cMulticastAddress, cBobPort);
         EXPECT_GT(_sentBytes, 0);
 
         std::array<uint8_t, cBufferSize> _receiveBuffer;
@@ -65,21 +74,8 @@ namespace AsyncBsdSocketLib
 
         // Evalute receiving and the sender
         EXPECT_GT(_receivedBytes, 0);
-        EXPECT_EQ(_senderIpAddress, cLocalhost);
+        EXPECT_EQ(_senderIpAddress, cLoopbackNic);
         EXPECT_EQ(_senderPort, cAlicePort);
-
-        // Evaluate echo sending
-        _sentBytes =
-            Bob.Send(_receiveBuffer, _senderIpAddress, _senderPort);
-        EXPECT_GT(_sentBytes, 0);
-
-        _receivedBytes =
-            Alice.Receive(_receiveBuffer, _senderIpAddress, _senderPort);
-
-        // Evalute echo receiving and the echo sender
-        EXPECT_GT(_receivedBytes, 0);
-        EXPECT_EQ(_senderIpAddress, cLocalhost);
-        EXPECT_EQ(_senderPort, cBobPort);
 
         // Evaluate echo data
         bool _areEqual =
