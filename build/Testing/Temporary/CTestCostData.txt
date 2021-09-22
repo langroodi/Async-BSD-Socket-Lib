@@ -1,0 +1,9 @@
+NetworkSocketTest.TcpClientConstructor 1 0.00247743
+NetworkSocketTest.TcpListenerConstructor 1 0.00205033
+NetworkSocketTest.UdpClientConstructor 1 0.00174682
+TcpCommunicationTest.Connection 1 0.00196703
+TcpCommunicationTest.ServerSendClientReceive 1 0.00175802
+TcpCommunicationTest.ClientSendServerReceive 1 0.00184202
+UdpUnicastCast.CheckSetup 1 0.00166482
+UdpUnicastCast.Echo 1 0.00173282
+---
