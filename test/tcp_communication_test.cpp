@@ -61,13 +61,16 @@ namespace AsyncBsdSocketLib
             0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
             0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f};
 
-        bool _sent = Server.Send<cBufferSize>(_sendBuffer) > 0;
-        EXPECT_TRUE(_sent);
+        // Evaluate sending
+        ssize_t _sentBytes = Server.Send(_sendBuffer);
+        EXPECT_GT(_sentBytes, 0);
 
+        // Evalute receiving
         std::array<uint8_t, cBufferSize> _receiveBuffer;
-        bool _received = Client.Receive<cBufferSize>(_receiveBuffer) > 0;
-        EXPECT_TRUE(_received);
+        ssize_t _receivedBytes = Client.Receive(_receiveBuffer);
+        EXPECT_GT(_receivedBytes, 0);
 
+        // Evalute data
         bool _areEqual =
             std::equal(
                 std::cbegin(_sendBuffer),
@@ -84,13 +87,16 @@ namespace AsyncBsdSocketLib
             0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
             0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f};
 
-        bool _sent = Client.Send<cBufferSize>(_sendBuffer) > 0;
-        EXPECT_TRUE(_sent);
+        // Evaluate sending
+        ssize_t _sentBytes = Client.Send(_sendBuffer);
+        EXPECT_GT(_sentBytes, 0);
 
+        // Evalute receiving
         std::array<uint8_t, cBufferSize> _receiveBuffer;
-        bool _received = Server.Receive<cBufferSize>(_receiveBuffer) > 0;
-        EXPECT_TRUE(_received);
+        ssize_t _receivedBytes = Server.Receive(_receiveBuffer);
+        EXPECT_GT(_receivedBytes, 0);
 
+        // Evalute data
         bool _areEqual =
             std::equal(
                 std::cbegin(_sendBuffer),

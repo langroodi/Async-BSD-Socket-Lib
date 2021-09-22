@@ -1,6 +1,4 @@
-#include <sys/socket.h>
 #include <netinet/in.h>
-#include <arpa/inet.h>
 #include "./udp_client.h"
 
 namespace AsyncBsdSocketLib
@@ -95,64 +93,6 @@ namespace AsyncBsdSocketLib
                                 sizeof(_multicastGroup)) > -1);
             }
         }
-
-        return _result;
-    }
-
-    template <std::size_t N>
-    ssize_t UdpClient::Send(
-        const std::array<uint8_t, N> &buffer,
-        std::string ipAddress,
-        uint16_t port) const noexcept
-    {
-        // No flag for sending
-        const int _flags = 0;
-
-        struct sockaddr_in _destinationAddress;
-        _destinationAddress.sin_addr.s_addr = inet_addr(ipAddress.c_str());
-        _destinationAddress.sin_family = AF_INET;
-        _destinationAddress.sin_port = htons(port);
-
-        ssize_t _result =
-            sendto(
-                mDescriptor,
-                buffer.size,
-                N,
-                _flags,
-                (struct sockaddr *)&_destinationAddress,
-                sizeof(_destinationAddress));
-
-        return _result;
-    }
-
-    template <std::size_t N>
-    ssize_t UdpClient::Receive(
-        std::array<uint8_t, N> &buffer,
-        std::string &ipAddress,
-        uint16_t &port) const noexcept
-    {
-        // No flag for receiving
-        const int _flags = 0;
-
-        struct sockaddr_in _sourceAddress;
-        int _sourceAddressLength = sizeof(_sourceAddress);
-
-        ssize_t _result =
-            recvfrom(
-                mDescriptor,
-                buffer.data,
-                N,
-                _flags,
-                (struct sockaddr *)&_sourceAddress,
-                &_sourceAddressLength);
-
-        // Convert IP address
-        char _ipAddress[INET_ADDRSTRLEN];
-        inet_ntop(AF_INET, &(_sourceAddress.sin_addr), _ipAddress, INET_ADDRSTRLEN);
-        ipAddress = std::string(_ipAddress);
-
-        // Convert port number
-        port = htons(_sourceAddress.sin_port);
 
         return _result;
     }

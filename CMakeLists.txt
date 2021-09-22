@@ -59,6 +59,7 @@ if(build_tests)
     async_bsd_socket_lib_test
     ${test_dir}/network_socket_test.cpp
     ${test_dir}/tcp_communication_test.cpp
+    ${test_dir}/udp_unicast_test.cpp
   )
 
   target_link_libraries(
