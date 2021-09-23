@@ -165,12 +165,11 @@ namespace AsyncBsdSocketLib
         return _result;
     }
 
-    bool Poller::TryPoll() const
+    bool Poller::TryPoll(int timeout) const
     {
         struct epoll_event _events[mEventCounter];
 
-        // Zero-timeout (immediate) polling
-        int _fdNo = epoll_wait(mDescriptor, _events, mEventCounter, 0);
+        int _fdNo = epoll_wait(mDescriptor, _events, mEventCounter, timeout);
 
         if (_fdNo == -1)
         {
