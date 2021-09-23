@@ -61,6 +61,7 @@ if(build_tests)
     ${test_dir}/tcp_communication_test.cpp
     ${test_dir}/udp_unicast_test.cpp
     ${test_dir}/udp_multicast_test.cpp
+    ${test_dir}/poller_test.cpp
   )
 
   target_link_libraries(
