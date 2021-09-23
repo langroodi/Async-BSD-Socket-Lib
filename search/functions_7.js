@@ -9,7 +9,7 @@ var searchData=
   ['tryclose_43',['TryClose',['../classAsyncBsdSocketLib_1_1NetworkSocket.html#a2e8ca9e7899e690d9e66d02279f6a441',1,'AsyncBsdSocketLib::NetworkSocket']]],
   ['tryconnect_44',['TryConnect',['../classAsyncBsdSocketLib_1_1TcpClient.html#afc766d86ec6e99271294a1c7eef6ca72',1,'AsyncBsdSocketLib::TcpClient']]],
   ['trymakeconnectionnonblock_45',['TryMakeConnectionNonblock',['../classAsyncBsdSocketLib_1_1TcpListener.html#a81be209d054746dc66f8c60f2167f6f7',1,'AsyncBsdSocketLib::TcpListener']]],
-  ['trypoll_46',['TryPoll',['../classAsyncBsdSocketLib_1_1Poller.html#a4cfa2cd5d143b23f59930d1c00a2b81b',1,'AsyncBsdSocketLib::Poller']]],
+  ['trypoll_46',['TryPoll',['../classAsyncBsdSocketLib_1_1Poller.html#ac881b742f4947ad6c649caa3dbac8f50',1,'AsyncBsdSocketLib::Poller']]],
   ['tryremovelistener_47',['TryRemoveListener',['../classAsyncBsdSocketLib_1_1Poller.html#a75661d22c90a333b539120bbd8ec6956',1,'AsyncBsdSocketLib::Poller']]],
   ['tryremovereceiver_48',['TryRemoveReceiver',['../classAsyncBsdSocketLib_1_1Poller.html#a243eeaf330d383676f45a88ec91ad038',1,'AsyncBsdSocketLib::Poller']]],
   ['tryremovesender_49',['TryRemoveSender',['../classAsyncBsdSocketLib_1_1Poller.html#a56d7053e860811e11322ebd5c40b5083',1,'AsyncBsdSocketLib::Poller']]],

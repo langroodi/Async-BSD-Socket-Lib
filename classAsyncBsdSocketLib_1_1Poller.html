@@ -128,9 +128,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a243eeaf330d383676f45a88ec91ad038"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsyncBsdSocketLib_1_1Poller.html#a243eeaf330d383676f45a88ec91ad038">TryRemoveReceiver</a> (<a class="el" href="classAsyncBsdSocketLib_1_1NetworkSocket.html">NetworkSocket</a> *networkSocket)</td></tr>
 <tr class="memdesc:a243eeaf330d383676f45a88ec91ad038"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to remove the receiver from the poller.  <a href="classAsyncBsdSocketLib_1_1Poller.html#a243eeaf330d383676f45a88ec91ad038">More...</a><br /></td></tr>
 <tr class="separator:a243eeaf330d383676f45a88ec91ad038"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cfa2cd5d143b23f59930d1c00a2b81b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsyncBsdSocketLib_1_1Poller.html#a4cfa2cd5d143b23f59930d1c00a2b81b">TryPoll</a> () const</td></tr>
-<tr class="memdesc:a4cfa2cd5d143b23f59930d1c00a2b81b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to perform an explicit polling over all the added sockets.  <a href="classAsyncBsdSocketLib_1_1Poller.html#a4cfa2cd5d143b23f59930d1c00a2b81b">More...</a><br /></td></tr>
-<tr class="separator:a4cfa2cd5d143b23f59930d1c00a2b81b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac881b742f4947ad6c649caa3dbac8f50"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsyncBsdSocketLib_1_1Poller.html#ac881b742f4947ad6c649caa3dbac8f50">TryPoll</a> (int timeout=0) const</td></tr>
+<tr class="memdesc:ac881b742f4947ad6c649caa3dbac8f50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to perform an explicit polling over all the added sockets.  <a href="classAsyncBsdSocketLib_1_1Poller.html#ac881b742f4947ad6c649caa3dbac8f50">More...</a><br /></td></tr>
+<tr class="separator:ac881b742f4947ad6c649caa3dbac8f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Network socket poller. </p>
@@ -275,8 +275,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4cfa2cd5d143b23f59930d1c00a2b81b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cfa2cd5d143b23f59930d1c00a2b81b">&#9670;&nbsp;</a></span>TryPoll()</h2>
+<a id="ac881b742f4947ad6c649caa3dbac8f50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac881b742f4947ad6c649caa3dbac8f50">&#9670;&nbsp;</a></span>TryPoll()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -284,14 +284,24 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">bool AsyncBsdSocketLib::Poller::TryPoll </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>0</code></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Try to perform an explicit polling over all the added sockets. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tiemout</td><td>Polling timeout in milliseconds </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the polling was successful; otherwise false </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Zero timeout means immediate return from the polling </dd>
+<dd>
+Timeout '-1' means polling indefinitely until an added socket becomes available for IO </dd></dl>
 
 </div>
 </div>
