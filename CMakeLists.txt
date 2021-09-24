@@ -23,6 +23,7 @@ FetchContent_MakeAvailable(googletest)
 
 option(build_tests "Build all the tests." ON)
 option(gtest_disable_pthreads "Disable uses of pthreads in gtest." OFF)
+option(build_samples "Build all the samples." OFF)
 
 ########################################################################
 #
@@ -35,6 +36,11 @@ set(source_dir
 
 set(test_dir
   "${CMAKE_SOURCE_DIR}/test")
+
+# Samples Directory
+
+set(sample_dir
+  "${CMAKE_SOURCE_DIR}/samples")
 
 ########################################################################
 
@@ -72,4 +78,17 @@ if(build_tests)
 
   include(GoogleTest)
   gtest_discover_tests(async_bsd_socket_lib_test)
- endif()
+endif()
+
+if(build_samples)
+  add_executable(
+    async_bsd_socket_lib_samples
+    ${sample_dir}/poller_sample.cpp
+  )
+
+  target_link_libraries(
+    async_bsd_socket_lib_samples
+    pthread
+    async_bsd_socket_lib
+  )
+endif()
