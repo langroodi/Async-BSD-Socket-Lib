@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <algorithm>
 #include <iterator>
-#include "../src/udp_client.h"
+#include <asyncbsdsocket/udp_client.h>
 
 namespace AsyncBsdSocketLib
 {

@@ -27,6 +27,11 @@ option(build_samples "Build all the samples." OFF)
 
 ########################################################################
 #
+# Include Directory:
+
+set(include_dir
+  "${PROJECT_SOURCE_DIR}/include")
+
 # Source Directory:
 
 set(source_dir
@@ -44,18 +49,19 @@ set(sample_dir
 
 ########################################################################
 
+include_directories(${include_dir})
+
 add_library(
   async_bsd_socket_lib
-  ${source_dir}/network_socket.h
   ${source_dir}/network_socket.cpp
-  ${source_dir}/poller.h
   ${source_dir}/poller.cpp
-  ${source_dir}/tcp_client.h
   ${source_dir}/tcp_client.cpp
-  ${source_dir}/tcp_listener.h
   ${source_dir}/tcp_listener.cpp
-  ${source_dir}/udp_client.h
   ${source_dir}/udp_client.cpp
+)
+
+target_include_directories(async_bsd_socket_lib
+  INTERFACE ${include_dir}
 )
 
 if(build_tests)

@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
-#include "../src/tcp_client.h"
-#include "../src/tcp_listener.h"
-#include "../src/udp_client.h"
+#include <asyncbsdsocket/tcp_client.h>
+#include <asyncbsdsocket/tcp_listener.h>
+#include <asyncbsdsocket/udp_client.h>
 
 namespace AsyncBsdSocketLib
 {
