@@ -30,17 +30,17 @@ option(build_samples "Build all the samples." OFF)
 # Source Directory:
 
 set(source_dir
-  "${CMAKE_SOURCE_DIR}/src")
+  "${PROJECT_SOURCE_DIR}/src")
 
 # Test Directory:
 
 set(test_dir
-  "${CMAKE_SOURCE_DIR}/test")
+  "${PROJECT_SOURCE_DIR}/test")
 
 # Samples Directory
 
 set(sample_dir
-  "${CMAKE_SOURCE_DIR}/samples")
+  "${PROJECT_SOURCE_DIR}/samples")
 
 ########################################################################
 
