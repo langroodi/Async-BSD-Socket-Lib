@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <sys/epoll.h>
+#include <stdexcept>
 #include "asyncbsdsocket/poller.h"
 
 namespace AsyncBsdSocketLib
