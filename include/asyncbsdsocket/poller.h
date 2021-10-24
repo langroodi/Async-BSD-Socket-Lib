@@ -59,7 +59,7 @@ namespace AsyncBsdSocketLib
         bool TryRemoveReceiver(NetworkSocket* networkSocket);
 
         /// @brief Try to perform an explicit polling over all the added sockets
-        /// @param tiemout Polling timeout in milliseconds
+        /// @param timeout Polling timeout in milliseconds
         /// @returns True if the polling was successful; otherwise false
         /// @note Zero timeout means immediate return from the polling
         /// @note Timeout '-1' means polling indefinitely until an added socket becomes available for IO

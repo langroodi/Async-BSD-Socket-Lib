@@ -37,7 +37,7 @@ jobs:
       run: ctest -C ${{env.BUILD_TYPE}}
     
     # Generate Doxygen code dodumentation and publish it to the GitHub Pages
-    - uses: langroodi/doxygenize@179614d62c0951609450fedbb6c3ecdbb81429a0
+    - uses: langroodi/doxygenize@v1.4
       with:
         doxygenconf: './doc/doxygen.conf'
         htmloutput: './doc/html/'
