@@ -1,0 +1,327 @@
+Start testing: Nov 28 18:08 UTC
+----------------------------------------------------------
+1/12 Testing: NetworkSocketTest.TcpClientConstructor
+1/12 Test: NetworkSocketTest.TcpClientConstructor
+Command: "/home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/async_bsd_socket_lib_test" "--gtest_filter=NetworkSocketTest.TcpClientConstructor" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build
+"NetworkSocketTest.TcpClientConstructor" start time: Nov 28 18:08 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NetworkSocketTest.TcpClientConstructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NetworkSocketTest
+[ RUN      ] NetworkSocketTest.TcpClientConstructor
+[       OK ] NetworkSocketTest.TcpClientConstructor (0 ms)
+[----------] 1 test from NetworkSocketTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"NetworkSocketTest.TcpClientConstructor" end time: Nov 28 18:08 UTC
+"NetworkSocketTest.TcpClientConstructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/12 Testing: NetworkSocketTest.TcpListenerConstructor
+2/12 Test: NetworkSocketTest.TcpListenerConstructor
+Command: "/home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/async_bsd_socket_lib_test" "--gtest_filter=NetworkSocketTest.TcpListenerConstructor" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build
+"NetworkSocketTest.TcpListenerConstructor" start time: Nov 28 18:08 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NetworkSocketTest.TcpListenerConstructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NetworkSocketTest
+[ RUN      ] NetworkSocketTest.TcpListenerConstructor
+[       OK ] NetworkSocketTest.TcpListenerConstructor (0 ms)
+[----------] 1 test from NetworkSocketTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NetworkSocketTest.TcpListenerConstructor" end time: Nov 28 18:08 UTC
+"NetworkSocketTest.TcpListenerConstructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/12 Testing: NetworkSocketTest.UdpClientConstructor
+3/12 Test: NetworkSocketTest.UdpClientConstructor
+Command: "/home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/async_bsd_socket_lib_test" "--gtest_filter=NetworkSocketTest.UdpClientConstructor" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build
+"NetworkSocketTest.UdpClientConstructor" start time: Nov 28 18:08 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NetworkSocketTest.UdpClientConstructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NetworkSocketTest
+[ RUN      ] NetworkSocketTest.UdpClientConstructor
+[       OK ] NetworkSocketTest.UdpClientConstructor (0 ms)
+[----------] 1 test from NetworkSocketTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NetworkSocketTest.UdpClientConstructor" end time: Nov 28 18:08 UTC
+"NetworkSocketTest.UdpClientConstructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/12 Testing: TcpCommunicationTest.Connection
+4/12 Test: TcpCommunicationTest.Connection
+Command: "/home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/async_bsd_socket_lib_test" "--gtest_filter=TcpCommunicationTest.Connection" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build
+"TcpCommunicationTest.Connection" start time: Nov 28 18:08 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = TcpCommunicationTest.Connection
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TcpCommunicationTest
+[ RUN      ] TcpCommunicationTest.Connection
+[       OK ] TcpCommunicationTest.Connection (0 ms)
+[----------] 1 test from TcpCommunicationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TcpCommunicationTest.Connection" end time: Nov 28 18:08 UTC
+"TcpCommunicationTest.Connection" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/12 Testing: TcpCommunicationTest.ServerSendClientReceive
+5/12 Test: TcpCommunicationTest.ServerSendClientReceive
+Command: "/home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/async_bsd_socket_lib_test" "--gtest_filter=TcpCommunicationTest.ServerSendClientReceive" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build
+"TcpCommunicationTest.ServerSendClientReceive" start time: Nov 28 18:08 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = TcpCommunicationTest.ServerSendClientReceive
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TcpCommunicationTest
+[ RUN      ] TcpCommunicationTest.ServerSendClientReceive
+[       OK ] TcpCommunicationTest.ServerSendClientReceive (0 ms)
+[----------] 1 test from TcpCommunicationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TcpCommunicationTest.ServerSendClientReceive" end time: Nov 28 18:08 UTC
+"TcpCommunicationTest.ServerSendClientReceive" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/12 Testing: TcpCommunicationTest.ClientSendServerReceive
+6/12 Test: TcpCommunicationTest.ClientSendServerReceive
+Command: "/home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/async_bsd_socket_lib_test" "--gtest_filter=TcpCommunicationTest.ClientSendServerReceive" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build
+"TcpCommunicationTest.ClientSendServerReceive" start time: Nov 28 18:08 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = TcpCommunicationTest.ClientSendServerReceive
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TcpCommunicationTest
+[ RUN      ] TcpCommunicationTest.ClientSendServerReceive
+[       OK ] TcpCommunicationTest.ClientSendServerReceive (0 ms)
+[----------] 1 test from TcpCommunicationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TcpCommunicationTest.ClientSendServerReceive" end time: Nov 28 18:08 UTC
+"TcpCommunicationTest.ClientSendServerReceive" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/12 Testing: UdpUnicastTest.CheckSetup
+7/12 Test: UdpUnicastTest.CheckSetup
+Command: "/home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/async_bsd_socket_lib_test" "--gtest_filter=UdpUnicastTest.CheckSetup" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build
+"UdpUnicastTest.CheckSetup" start time: Nov 28 18:08 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UdpUnicastTest.CheckSetup
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UdpUnicastTest
+[ RUN      ] UdpUnicastTest.CheckSetup
+[       OK ] UdpUnicastTest.CheckSetup (0 ms)
+[----------] 1 test from UdpUnicastTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UdpUnicastTest.CheckSetup" end time: Nov 28 18:08 UTC
+"UdpUnicastTest.CheckSetup" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/12 Testing: UdpUnicastTest.Echo
+8/12 Test: UdpUnicastTest.Echo
+Command: "/home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/async_bsd_socket_lib_test" "--gtest_filter=UdpUnicastTest.Echo" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build
+"UdpUnicastTest.Echo" start time: Nov 28 18:08 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UdpUnicastTest.Echo
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UdpUnicastTest
+[ RUN      ] UdpUnicastTest.Echo
+[       OK ] UdpUnicastTest.Echo (0 ms)
+[----------] 1 test from UdpUnicastTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UdpUnicastTest.Echo" end time: Nov 28 18:08 UTC
+"UdpUnicastTest.Echo" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/12 Testing: UdpMulticastTest.SetupCheck
+9/12 Test: UdpMulticastTest.SetupCheck
+Command: "/home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/async_bsd_socket_lib_test" "--gtest_filter=UdpMulticastTest.SetupCheck" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build
+"UdpMulticastTest.SetupCheck" start time: Nov 28 18:08 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UdpMulticastTest.SetupCheck
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UdpMulticastTest
+[ RUN      ] UdpMulticastTest.SetupCheck
+[       OK ] UdpMulticastTest.SetupCheck (0 ms)
+[----------] 1 test from UdpMulticastTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UdpMulticastTest.SetupCheck" end time: Nov 28 18:08 UTC
+"UdpMulticastTest.SetupCheck" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/12 Testing: UdpMulticastTest.AliceBobTalk
+10/12 Test: UdpMulticastTest.AliceBobTalk
+Command: "/home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/async_bsd_socket_lib_test" "--gtest_filter=UdpMulticastTest.AliceBobTalk" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build
+"UdpMulticastTest.AliceBobTalk" start time: Nov 28 18:08 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UdpMulticastTest.AliceBobTalk
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UdpMulticastTest
+[ RUN      ] UdpMulticastTest.AliceBobTalk
+[       OK ] UdpMulticastTest.AliceBobTalk (0 ms)
+[----------] 1 test from UdpMulticastTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UdpMulticastTest.AliceBobTalk" end time: Nov 28 18:08 UTC
+"UdpMulticastTest.AliceBobTalk" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/12 Testing: UdpMulticastTest.AliceBobEveTalk
+11/12 Test: UdpMulticastTest.AliceBobEveTalk
+Command: "/home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/async_bsd_socket_lib_test" "--gtest_filter=UdpMulticastTest.AliceBobEveTalk" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build
+"UdpMulticastTest.AliceBobEveTalk" start time: Nov 28 18:08 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UdpMulticastTest.AliceBobEveTalk
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UdpMulticastTest
+[ RUN      ] UdpMulticastTest.AliceBobEveTalk
+[       OK ] UdpMulticastTest.AliceBobEveTalk (0 ms)
+[----------] 1 test from UdpMulticastTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UdpMulticastTest.AliceBobEveTalk" end time: Nov 28 18:08 UTC
+"UdpMulticastTest.AliceBobEveTalk" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/12 Testing: PollerTest.ServerClientPoll
+12/12 Test: PollerTest.ServerClientPoll
+Command: "/home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/async_bsd_socket_lib_test" "--gtest_filter=PollerTest.ServerClientPoll" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build
+"PollerTest.ServerClientPoll" start time: Nov 28 18:08 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Async-BSD-Socket-Lib/Async-BSD-Socket-Lib/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PollerTest.ServerClientPoll
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PollerTest
+[ RUN      ] PollerTest.ServerClientPoll
+[       OK ] PollerTest.ServerClientPoll (0 ms)
+[----------] 1 test from PollerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PollerTest.ServerClientPoll" end time: Nov 28 18:08 UTC
+"PollerTest.ServerClientPoll" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 28 18:08 UTC
