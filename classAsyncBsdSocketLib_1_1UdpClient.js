@@ -1,6 +1,5 @@
 var classAsyncBsdSocketLib_1_1UdpClient =
 [
-    [ "UdpClient", "classAsyncBsdSocketLib_1_1UdpClient.html#a6485ebffae73d97eebac9eb29f4813bd", null ],
     [ "UdpClient", "classAsyncBsdSocketLib_1_1UdpClient.html#a755f67d14dbf5d2cff595da4b01f5975", null ],
     [ "UdpClient", "classAsyncBsdSocketLib_1_1UdpClient.html#ac9e6aa563f249d849b2fbc6bfae281eb", null ],
     [ "Connection", "classAsyncBsdSocketLib_1_1UdpClient.html#a3919a2d86a47618dcaa950a924ce2c05", null ],

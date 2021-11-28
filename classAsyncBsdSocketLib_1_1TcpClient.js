@@ -1,6 +1,5 @@
 var classAsyncBsdSocketLib_1_1TcpClient =
 [
-    [ "TcpClient", "classAsyncBsdSocketLib_1_1TcpClient.html#a29161507e1522ed46fb243394ac97bdc", null ],
     [ "TcpClient", "classAsyncBsdSocketLib_1_1TcpClient.html#a0c9a9227cee691f118682f1511552024", null ],
     [ "Connection", "classAsyncBsdSocketLib_1_1TcpClient.html#aa127f92fd443e39fe31571d681fd7dac", null ],
     [ "IsConnected", "classAsyncBsdSocketLib_1_1TcpClient.html#a9b32c89b6633f7391eb829a03c2ffee5", null ],
