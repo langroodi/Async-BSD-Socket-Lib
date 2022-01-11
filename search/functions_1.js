@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['descriptor_0',['Descriptor',['../classAsyncBsdSocketLib_1_1NetworkSocket.html#ac631a12972720f106b08df19bf602b1a',1,'AsyncBsdSocketLib::NetworkSocket']]]
+  ['descriptor_0',['Descriptor',['../classAsyncBsdSocketLib_1_1Communicator.html#a773393b811d490c97f38043a9794fb69',1,'AsyncBsdSocketLib::Communicator']]]
 ];

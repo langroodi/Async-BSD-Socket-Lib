@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('classAsyncBsdSocketLib_1_1Poller.html'
 </div><!--header-->
 <div class="contents">
 
-<p>Network socket poller.  
+<p><a class="el" href="classAsyncBsdSocketLib_1_1Communicator.html" title="Communication method (i.e., network sockets and named pipes)">Communicator</a> poller.  
  <a href="classAsyncBsdSocketLib_1_1Poller.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="poller_8h_source.html">poller.h</a>&gt;</code></p>
@@ -112,27 +112,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5853ff655ac5570e7c8f04d59a02edbd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsyncBsdSocketLib_1_1Poller.html#a5853ff655ac5570e7c8f04d59a02edbd">TryAddListener</a> (<a class="el" href="classAsyncBsdSocketLib_1_1TcpListener.html">TcpListener</a> *tcpListener, std::function&lt; void()&gt; callback)</td></tr>
 <tr class="memdesc:a5853ff655ac5570e7c8f04d59a02edbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to add a TCP listener to the poller.  <a href="classAsyncBsdSocketLib_1_1Poller.html#a5853ff655ac5570e7c8f04d59a02edbd">More...</a><br /></td></tr>
 <tr class="separator:a5853ff655ac5570e7c8f04d59a02edbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3242619a005a8f825613c099f7d7db2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsyncBsdSocketLib_1_1Poller.html#ae3242619a005a8f825613c099f7d7db2">TryAddSender</a> (<a class="el" href="classAsyncBsdSocketLib_1_1NetworkSocket.html">NetworkSocket</a> *networkSocket, std::function&lt; void()&gt; callback)</td></tr>
-<tr class="memdesc:ae3242619a005a8f825613c099f7d7db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to add a sender to the poller.  <a href="classAsyncBsdSocketLib_1_1Poller.html#ae3242619a005a8f825613c099f7d7db2">More...</a><br /></td></tr>
-<tr class="separator:ae3242619a005a8f825613c099f7d7db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73bd0b4343ac951d72c230672010dc4e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsyncBsdSocketLib_1_1Poller.html#a73bd0b4343ac951d72c230672010dc4e">TryAddReceiver</a> (<a class="el" href="classAsyncBsdSocketLib_1_1NetworkSocket.html">NetworkSocket</a> *networkSocket, std::function&lt; void()&gt; callback)</td></tr>
-<tr class="memdesc:a73bd0b4343ac951d72c230672010dc4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to add a receiver to the poller.  <a href="classAsyncBsdSocketLib_1_1Poller.html#a73bd0b4343ac951d72c230672010dc4e">More...</a><br /></td></tr>
-<tr class="separator:a73bd0b4343ac951d72c230672010dc4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a421e21573dd5ab15c135f9764deaacfd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsyncBsdSocketLib_1_1Poller.html#a421e21573dd5ab15c135f9764deaacfd">TryAddSender</a> (<a class="el" href="classAsyncBsdSocketLib_1_1Communicator.html">Communicator</a> *communicator, std::function&lt; void()&gt; callback)</td></tr>
+<tr class="memdesc:a421e21573dd5ab15c135f9764deaacfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to add a sender to the poller.  <a href="classAsyncBsdSocketLib_1_1Poller.html#a421e21573dd5ab15c135f9764deaacfd">More...</a><br /></td></tr>
+<tr class="separator:a421e21573dd5ab15c135f9764deaacfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a3944c24e070947d45a4c02669d7643"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsyncBsdSocketLib_1_1Poller.html#a6a3944c24e070947d45a4c02669d7643">TryAddReceiver</a> (<a class="el" href="classAsyncBsdSocketLib_1_1Communicator.html">Communicator</a> *communicator, std::function&lt; void()&gt; callback)</td></tr>
+<tr class="memdesc:a6a3944c24e070947d45a4c02669d7643"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to add a receiver to the poller.  <a href="classAsyncBsdSocketLib_1_1Poller.html#a6a3944c24e070947d45a4c02669d7643">More...</a><br /></td></tr>
+<tr class="separator:a6a3944c24e070947d45a4c02669d7643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75661d22c90a333b539120bbd8ec6956"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsyncBsdSocketLib_1_1Poller.html#a75661d22c90a333b539120bbd8ec6956">TryRemoveListener</a> (<a class="el" href="classAsyncBsdSocketLib_1_1TcpListener.html">TcpListener</a> *tcpListener)</td></tr>
 <tr class="memdesc:a75661d22c90a333b539120bbd8ec6956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to remove the TCP listener from the poller.  <a href="classAsyncBsdSocketLib_1_1Poller.html#a75661d22c90a333b539120bbd8ec6956">More...</a><br /></td></tr>
 <tr class="separator:a75661d22c90a333b539120bbd8ec6956"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56d7053e860811e11322ebd5c40b5083"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsyncBsdSocketLib_1_1Poller.html#a56d7053e860811e11322ebd5c40b5083">TryRemoveSender</a> (<a class="el" href="classAsyncBsdSocketLib_1_1NetworkSocket.html">NetworkSocket</a> *networkSocket)</td></tr>
-<tr class="memdesc:a56d7053e860811e11322ebd5c40b5083"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to remove the sender from the poller.  <a href="classAsyncBsdSocketLib_1_1Poller.html#a56d7053e860811e11322ebd5c40b5083">More...</a><br /></td></tr>
-<tr class="separator:a56d7053e860811e11322ebd5c40b5083"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a243eeaf330d383676f45a88ec91ad038"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsyncBsdSocketLib_1_1Poller.html#a243eeaf330d383676f45a88ec91ad038">TryRemoveReceiver</a> (<a class="el" href="classAsyncBsdSocketLib_1_1NetworkSocket.html">NetworkSocket</a> *networkSocket)</td></tr>
-<tr class="memdesc:a243eeaf330d383676f45a88ec91ad038"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to remove the receiver from the poller.  <a href="classAsyncBsdSocketLib_1_1Poller.html#a243eeaf330d383676f45a88ec91ad038">More...</a><br /></td></tr>
-<tr class="separator:a243eeaf330d383676f45a88ec91ad038"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15ab606c4ba3e8b58692448acb646b46"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsyncBsdSocketLib_1_1Poller.html#a15ab606c4ba3e8b58692448acb646b46">TryRemoveSender</a> (<a class="el" href="classAsyncBsdSocketLib_1_1Communicator.html">Communicator</a> *communicator)</td></tr>
+<tr class="memdesc:a15ab606c4ba3e8b58692448acb646b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to remove the sender from the poller.  <a href="classAsyncBsdSocketLib_1_1Poller.html#a15ab606c4ba3e8b58692448acb646b46">More...</a><br /></td></tr>
+<tr class="separator:a15ab606c4ba3e8b58692448acb646b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a087ae351a2aa3f8ac0f446c0caf48097"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsyncBsdSocketLib_1_1Poller.html#a087ae351a2aa3f8ac0f446c0caf48097">TryRemoveReceiver</a> (<a class="el" href="classAsyncBsdSocketLib_1_1Communicator.html">Communicator</a> *communicator)</td></tr>
+<tr class="memdesc:a087ae351a2aa3f8ac0f446c0caf48097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to remove the receiver from the poller.  <a href="classAsyncBsdSocketLib_1_1Poller.html#a087ae351a2aa3f8ac0f446c0caf48097">More...</a><br /></td></tr>
+<tr class="separator:a087ae351a2aa3f8ac0f446c0caf48097"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac881b742f4947ad6c649caa3dbac8f50"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAsyncBsdSocketLib_1_1Poller.html#ac881b742f4947ad6c649caa3dbac8f50">TryPoll</a> (int timeout=0) const</td></tr>
-<tr class="memdesc:ac881b742f4947ad6c649caa3dbac8f50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to perform an explicit polling over all the added sockets.  <a href="classAsyncBsdSocketLib_1_1Poller.html#ac881b742f4947ad6c649caa3dbac8f50">More...</a><br /></td></tr>
+<tr class="memdesc:ac881b742f4947ad6c649caa3dbac8f50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to perform an explicit polling over all the added communicators.  <a href="classAsyncBsdSocketLib_1_1Poller.html#ac881b742f4947ad6c649caa3dbac8f50">More...</a><br /></td></tr>
 <tr class="separator:ac881b742f4947ad6c649caa3dbac8f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Network socket poller. </p>
+<div class="textblock"><p ><a class="el" href="classAsyncBsdSocketLib_1_1Communicator.html" title="Communication method (i.e., network sockets and named pipes)">Communicator</a> poller. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4731d12491faed808482bb4f7c0b3f68" name="a4731d12491faed808482bb4f7c0b3f68"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4731d12491faed808482bb4f7c0b3f68">&#9670;&nbsp;</a></span>Poller()</h2>
@@ -198,8 +198,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a73bd0b4343ac951d72c230672010dc4e" name="a73bd0b4343ac951d72c230672010dc4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73bd0b4343ac951d72c230672010dc4e">&#9670;&nbsp;</a></span>TryAddReceiver()</h2>
+<a id="a6a3944c24e070947d45a4c02669d7643" name="a6a3944c24e070947d45a4c02669d7643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a3944c24e070947d45a4c02669d7643">&#9670;&nbsp;</a></span>TryAddReceiver()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,8 +207,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">bool AsyncBsdSocketLib::Poller::TryAddReceiver </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classAsyncBsdSocketLib_1_1NetworkSocket.html">NetworkSocket</a> *&#160;</td>
-          <td class="paramname"><em>networkSocket</em>, </td>
+          <td class="paramtype"><a class="el" href="classAsyncBsdSocketLib_1_1Communicator.html">Communicator</a> *&#160;</td>
+          <td class="paramname"><em>communicator</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -227,17 +227,17 @@ Public Member Functions</h2></td></tr>
 <p>Try to add a receiver to the poller. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">networkSocket</td><td>Receiver network socket </td></tr>
-    <tr><td class="paramname">callback</td><td>Callback to be fired when the socket is ready receive data </td></tr>
+    <tr><td class="paramname">communicator</td><td>Receiver communicator </td></tr>
+    <tr><td class="paramname">callback</td><td>Callback to be fired when the communicator is ready receive data </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the socket is added successfully to the poller; otherwise false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the communicator is added successfully to the poller; otherwise false </dd></dl>
 
 </div>
 </div>
-<a id="ae3242619a005a8f825613c099f7d7db2" name="ae3242619a005a8f825613c099f7d7db2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3242619a005a8f825613c099f7d7db2">&#9670;&nbsp;</a></span>TryAddSender()</h2>
+<a id="a421e21573dd5ab15c135f9764deaacfd" name="a421e21573dd5ab15c135f9764deaacfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a421e21573dd5ab15c135f9764deaacfd">&#9670;&nbsp;</a></span>TryAddSender()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,8 +245,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">bool AsyncBsdSocketLib::Poller::TryAddSender </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classAsyncBsdSocketLib_1_1NetworkSocket.html">NetworkSocket</a> *&#160;</td>
-          <td class="paramname"><em>networkSocket</em>, </td>
+          <td class="paramtype"><a class="el" href="classAsyncBsdSocketLib_1_1Communicator.html">Communicator</a> *&#160;</td>
+          <td class="paramname"><em>communicator</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -265,12 +265,12 @@ Public Member Functions</h2></td></tr>
 <p>Try to add a sender to the poller. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">networkSocket</td><td>Sender network socket </td></tr>
-    <tr><td class="paramname">callback</td><td>Callback to be fired when the socket is ready to send data </td></tr>
+    <tr><td class="paramname">communicator</td><td>Sender communicator </td></tr>
+    <tr><td class="paramname">callback</td><td>Callback to be fired when the communicator is ready to send data </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the socket is added successfully to the poller; otherwise false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the communicator is added successfully to the poller; otherwise false </dd></dl>
 
 </div>
 </div>
@@ -290,7 +290,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Try to perform an explicit polling over all the added sockets. </p>
+<p>Try to perform an explicit polling over all the added communicators. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timeout</td><td>Polling timeout in milliseconds </td></tr>
@@ -300,7 +300,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True if the polling was successful; otherwise false </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Zero timeout means immediate return from the polling </dd>
 <dd>
-Timeout '-1' means polling indefinitely until an added socket becomes available for IO </dd></dl>
+Timeout '-1' means polling indefinitely until an added communicator becomes available for IO </dd></dl>
 
 </div>
 </div>
@@ -331,8 +331,8 @@ Timeout '-1' means polling indefinitely until an added socket becomes available 
 
 </div>
 </div>
-<a id="a243eeaf330d383676f45a88ec91ad038" name="a243eeaf330d383676f45a88ec91ad038"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a243eeaf330d383676f45a88ec91ad038">&#9670;&nbsp;</a></span>TryRemoveReceiver()</h2>
+<a id="a087ae351a2aa3f8ac0f446c0caf48097" name="a087ae351a2aa3f8ac0f446c0caf48097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a087ae351a2aa3f8ac0f446c0caf48097">&#9670;&nbsp;</a></span>TryRemoveReceiver()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -340,8 +340,8 @@ Timeout '-1' means polling indefinitely until an added socket becomes available 
         <tr>
           <td class="memname">bool AsyncBsdSocketLib::Poller::TryRemoveReceiver </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classAsyncBsdSocketLib_1_1NetworkSocket.html">NetworkSocket</a> *&#160;</td>
-          <td class="paramname"><em>networkSocket</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classAsyncBsdSocketLib_1_1Communicator.html">Communicator</a> *&#160;</td>
+          <td class="paramname"><em>communicator</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -350,16 +350,16 @@ Timeout '-1' means polling indefinitely until an added socket becomes available 
 <p>Try to remove the receiver from the poller. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">networkSocket</td><td>Previously added receiver network socket </td></tr>
+    <tr><td class="paramname">communicator</td><td>Previously added receiver communicator </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the socket is removed successfully from the poller; otherwise false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the communicator is removed successfully from the poller; otherwise false </dd></dl>
 
 </div>
 </div>
-<a id="a56d7053e860811e11322ebd5c40b5083" name="a56d7053e860811e11322ebd5c40b5083"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56d7053e860811e11322ebd5c40b5083">&#9670;&nbsp;</a></span>TryRemoveSender()</h2>
+<a id="a15ab606c4ba3e8b58692448acb646b46" name="a15ab606c4ba3e8b58692448acb646b46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15ab606c4ba3e8b58692448acb646b46">&#9670;&nbsp;</a></span>TryRemoveSender()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -367,8 +367,8 @@ Timeout '-1' means polling indefinitely until an added socket becomes available 
         <tr>
           <td class="memname">bool AsyncBsdSocketLib::Poller::TryRemoveSender </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classAsyncBsdSocketLib_1_1NetworkSocket.html">NetworkSocket</a> *&#160;</td>
-          <td class="paramname"><em>networkSocket</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classAsyncBsdSocketLib_1_1Communicator.html">Communicator</a> *&#160;</td>
+          <td class="paramname"><em>communicator</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -377,11 +377,11 @@ Timeout '-1' means polling indefinitely until an added socket becomes available 
 <p>Try to remove the sender from the poller. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">networkSocket</td><td>Previously added sender network socket </td></tr>
+    <tr><td class="paramname">communicator</td><td>Previously added sender communicator </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the socket is removed successfully from the poller; otherwise false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the communicator is removed successfully from the poller; otherwise false </dd></dl>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isconnected_0',['IsConnected',['../classAsyncBsdSocketLib_1_1TcpClient.html#a9b32c89b6633f7391eb829a03c2ffee5',1,'AsyncBsdSocketLib::TcpClient']]]
+  ['filedescriptor_0',['FileDescriptor',['../classAsyncBsdSocketLib_1_1Communicator.html#a3c96ce29c77815901fe5e01d00d25d97',1,'AsyncBsdSocketLib::Communicator']]]
 ];

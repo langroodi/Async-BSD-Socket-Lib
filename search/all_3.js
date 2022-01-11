@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['mdescriptor_0',['mDescriptor',['../classAsyncBsdSocketLib_1_1NetworkSocket.html#af6f3fae96cd8e1d0f821eb31a48b6927',1,'AsyncBsdSocketLib::NetworkSocket']]],
-  ['mipaddress_1',['mIpAddress',['../classAsyncBsdSocketLib_1_1NetworkSocket.html#a153ed67599d1c740d69e5688048d49e5',1,'AsyncBsdSocketLib::NetworkSocket']]],
-  ['mport_2',['mPort',['../classAsyncBsdSocketLib_1_1NetworkSocket.html#a405d2faa615148f26377571ec0e755e3',1,'AsyncBsdSocketLib::NetworkSocket']]]
+  ['ipaddress_0',['IpAddress',['../classAsyncBsdSocketLib_1_1NetworkSocket.html#a883b78fc01af4eb54617119e1ff3889e',1,'AsyncBsdSocketLib::NetworkSocket']]],
+  ['isconnected_1',['IsConnected',['../classAsyncBsdSocketLib_1_1TcpClient.html#a9b32c89b6633f7391eb829a03c2ffee5',1,'AsyncBsdSocketLib::TcpClient']]]
 ];

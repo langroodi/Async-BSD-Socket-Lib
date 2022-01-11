@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['networksocket_0',['NetworkSocket',['../classAsyncBsdSocketLib_1_1NetworkSocket.html',1,'AsyncBsdSocketLib']]]
+  ['communicator_0',['Communicator',['../classAsyncBsdSocketLib_1_1Communicator.html',1,'AsyncBsdSocketLib']]]
 ];
