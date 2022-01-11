@@ -3,16 +3,15 @@
 
 #include <map>
 #include <functional>
-#include "./network_socket.h"
 #include "./tcp_listener.h"
 
 namespace AsyncBsdSocketLib
 {
-    /// @brief Network socket poller
+    /// @brief Communicator poller
     class Poller
     {
     private:
-        int mDescriptor;
+        int mFileDescriptor;
         size_t mEventCounter;
         std::map<int, std::function<void()>> mListeners;
         std::map<int, std::function<void()>> mSenders;
@@ -32,16 +31,16 @@ namespace AsyncBsdSocketLib
         bool TryAddListener(TcpListener* tcpListener, std::function<void()> callback);
 
         /// @brief Try to add a sender to the poller
-        /// @param networkSocket Sender network socket
-        /// @param callback Callback to be fired when the socket is ready to send data
-        /// @returns True if the socket is added successfully to the poller; otherwise false
-        bool TryAddSender(NetworkSocket* networkSocket, std::function<void()> callback);
+        /// @param communicator Sender communicator
+        /// @param callback Callback to be fired when the communicator is ready to send data
+        /// @returns True if the communicator is added successfully to the poller; otherwise false
+        bool TryAddSender(Communicator* communicator, std::function<void()> callback);
 
         /// @brief Try to add a receiver to the poller
-        /// @param networkSocket Receiver network socket
-        /// @param callback Callback to be fired when the socket is ready receive data
-        /// @returns True if the socket is added successfully to the poller; otherwise false
-        bool TryAddReceiver(NetworkSocket* networkSocket, std::function<void()> callback);
+        /// @param communicator Receiver communicator
+        /// @param callback Callback to be fired when the communicator is ready receive data
+        /// @returns True if the communicator is added successfully to the poller; otherwise false
+        bool TryAddReceiver(Communicator* communicator, std::function<void()> callback);
 
         /// @brief Try to remove the TCP listener from the poller
         /// @param tcpListener Previously added TCP listener socket
@@ -49,20 +48,20 @@ namespace AsyncBsdSocketLib
         bool TryRemoveListener(TcpListener* tcpListener);
 
         /// @brief Try to remove the sender from the poller
-        /// @param networkSocket Previously added sender network socket
-        /// @returns True if the socket is removed successfully from the poller; otherwise false
-        bool TryRemoveSender(NetworkSocket* networkSocket);
+        /// @param communicator Previously added sender communicator
+        /// @returns True if the communicator is removed successfully from the poller; otherwise false
+        bool TryRemoveSender(Communicator* communicator);
 
         /// @brief Try to remove the receiver from the poller
-        /// @param networkSocket Previously added receiver network socket
-        /// @returns True if the socket is removed successfully from the poller; otherwise false
-        bool TryRemoveReceiver(NetworkSocket* networkSocket);
+        /// @param communicator Previously added receiver communicator
+        /// @returns True if the communicator is removed successfully from the poller; otherwise false
+        bool TryRemoveReceiver(Communicator* communicator);
 
-        /// @brief Try to perform an explicit polling over all the added sockets
+        /// @brief Try to perform an explicit polling over all the added communicators
         /// @param timeout Polling timeout in milliseconds
         /// @returns True if the polling was successful; otherwise false
         /// @note Zero timeout means immediate return from the polling
-        /// @note Timeout '-1' means polling indefinitely until an added socket becomes available for IO
+        /// @note Timeout '-1' means polling indefinitely until an added communicator becomes available for IO
         bool TryPoll(int timeout = 0) const;
     };
 }

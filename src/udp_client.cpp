@@ -25,14 +25,14 @@ namespace AsyncBsdSocketLib
 
     int UdpClient::Connection() const noexcept
     {
-        return mDescriptor;
+        return FileDescriptor;
     }
 
     bool UdpClient::TrySetup() noexcept
     {
-        mDescriptor = socket(AF_INET, SOCK_DGRAM, 0);
+        FileDescriptor = socket(AF_INET, SOCK_DGRAM, 0);
 
-        bool _result = (mDescriptor >= 0);
+        bool _result = (FileDescriptor >= 0);
 
         if (_result && mIsMulticast && mShareAddress)
         {
@@ -41,7 +41,7 @@ namespace AsyncBsdSocketLib
             // Enable re-use address flag
             _result =
                 (setsockopt(
-                     mDescriptor,
+                     FileDescriptor,
                      SOL_SOCKET,
                      SO_REUSEADDR,
                      (const void *)(&_enable),
@@ -51,14 +51,14 @@ namespace AsyncBsdSocketLib
         if (_result)
         {
             struct sockaddr_in _address;
-            _address.sin_addr.s_addr = inet_addr(mIpAddress.c_str());
+            _address.sin_addr.s_addr = inet_addr(IpAddress.c_str());
             _address.sin_family = AF_INET;
-            _address.sin_port = htons(mPort);
+            _address.sin_port = htons(Port);
 
             //! \remark Binding the socket to the port
             _result =
                 (bind(
-                     mDescriptor,
+                     FileDescriptor,
                      (struct sockaddr *)&_address,
                      sizeof(_address)) == 0);
         }
@@ -72,7 +72,7 @@ namespace AsyncBsdSocketLib
             // Enable sending multicast traffic through the NIC
             _result =
                 (setsockopt(
-                     mDescriptor,
+                     FileDescriptor,
                      IPPROTO_IP, IP_MULTICAST_IF,
                      (const void *)(&_nicAddress),
                      sizeof(_nicAddress)) > -1);
@@ -87,7 +87,7 @@ namespace AsyncBsdSocketLib
 
                 // Subscribe to the multicast group for receiving the multicast traffic
                 _result =
-                    (setsockopt(mDescriptor,
+                    (setsockopt(FileDescriptor,
                                 IPPROTO_IP, IP_ADD_MEMBERSHIP,
                                 (const void *)(&_multicastGroup),
                                 sizeof(_multicastGroup)) > -1);

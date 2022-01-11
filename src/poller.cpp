@@ -7,9 +7,9 @@ namespace AsyncBsdSocketLib
 {
     Poller::Poller()
     {
-        mDescriptor = epoll_create1(0);
+        mFileDescriptor = epoll_create1(0);
 
-        if (mDescriptor == -1)
+        if (mFileDescriptor == -1)
         {
             throw std::runtime_error("Cannot create the poller");
         }
@@ -19,7 +19,7 @@ namespace AsyncBsdSocketLib
 
     Poller::~Poller() noexcept
     {
-        close(mDescriptor);
+        close(mFileDescriptor);
     }
 
     bool Poller::TryAddListener(
@@ -32,7 +32,7 @@ namespace AsyncBsdSocketLib
 
         bool _result =
             (epoll_ctl(
-                 mDescriptor,
+                 mFileDescriptor,
                  EPOLL_CTL_ADD,
                  _socketDescriptor,
                  &_event) >= 0);
@@ -47,16 +47,16 @@ namespace AsyncBsdSocketLib
     }
 
     bool Poller::TryAddSender(
-        NetworkSocket *networkSocket, std::function<void()> callback)
+        Communicator *communicator, std::function<void()> callback)
     {
-        int _connectionDescriptor = networkSocket->Connection();
+        int _connectionDescriptor = communicator->Connection();
         struct epoll_event _event;
         _event.events = EPOLLOUT;
         _event.data.fd = _connectionDescriptor;
 
         bool _result =
             (epoll_ctl(
-                 mDescriptor,
+                 mFileDescriptor,
                  EPOLL_CTL_ADD,
                  _connectionDescriptor,
                  &_event) >= 0);
@@ -71,16 +71,16 @@ namespace AsyncBsdSocketLib
     }
 
     bool Poller::TryAddReceiver(
-        NetworkSocket *networkSocket, std::function<void()> callback)
+        Communicator *communicator, std::function<void()> callback)
     {
-        int _connectionDescriptor = networkSocket->Connection();
+        int _connectionDescriptor = communicator->Connection();
         struct epoll_event _event;
         _event.events = EPOLLIN | EPOLLET;
         _event.data.fd = _connectionDescriptor;
 
         bool _result =
             (epoll_ctl(
-                 mDescriptor,
+                 mFileDescriptor,
                  EPOLL_CTL_ADD,
                  _connectionDescriptor,
                  &_event) >= 0);
@@ -104,7 +104,7 @@ namespace AsyncBsdSocketLib
 
         bool _result =
             (epoll_ctl(
-                 mDescriptor,
+                 mFileDescriptor,
                  EPOLL_CTL_DEL,
                  _socketDescriptor,
                  &_event) >= 0);
@@ -118,17 +118,17 @@ namespace AsyncBsdSocketLib
         return _result;
     }
 
-    bool Poller::TryRemoveSender(NetworkSocket *networkSocket)
+    bool Poller::TryRemoveSender(Communicator *communicator)
     {
         // To avoid Linux bug, the event should not be NULL pointer
-        int _connectionDescriptor = networkSocket->Connection();
+        int _connectionDescriptor = communicator->Connection();
         struct epoll_event _event;
         _event.events = EPOLLOUT;
         _event.data.fd = _connectionDescriptor;
 
         bool _result =
             (epoll_ctl(
-                 mDescriptor,
+                 mFileDescriptor,
                  EPOLL_CTL_DEL,
                  _connectionDescriptor,
                  &_event) >= 0);
@@ -142,17 +142,17 @@ namespace AsyncBsdSocketLib
         return _result;
     }
 
-    bool Poller::TryRemoveReceiver(NetworkSocket *networkSocket)
+    bool Poller::TryRemoveReceiver(Communicator *communicator)
     {
         // To avoid Linux bug, the event should not be NULL pointer
-        int _connectionDescriptor = networkSocket->Connection();
+        int _connectionDescriptor = communicator->Connection();
         struct epoll_event _event;
         _event.events = EPOLLIN | EPOLLET;
         _event.data.fd = _connectionDescriptor;
 
         bool _result =
             (epoll_ctl(
-                 mDescriptor,
+                 mFileDescriptor,
                  EPOLL_CTL_DEL,
                  _connectionDescriptor,
                  &_event) >= 0);
@@ -170,7 +170,7 @@ namespace AsyncBsdSocketLib
     {
         struct epoll_event _events[mEventCounter];
 
-        int _fdNo = epoll_wait(mDescriptor, _events, mEventCounter, timeout);
+        int _fdNo = epoll_wait(mFileDescriptor, _events, mEventCounter, timeout);
 
         if (_fdNo == -1)
         {

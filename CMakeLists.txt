@@ -53,6 +53,7 @@ include_directories(${include_dir})
 
 add_library(
   async_bsd_socket_lib
+  ${source_dir}/communicator.cpp
   ${source_dir}/network_socket.cpp
   ${source_dir}/poller.cpp
   ${source_dir}/tcp_client.cpp

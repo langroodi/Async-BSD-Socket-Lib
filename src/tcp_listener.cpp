@@ -23,9 +23,9 @@ namespace AsyncBsdSocketLib
     bool TcpListener::TrySetup() noexcept
     {
         //! \remark Creating socket file descriptor
-        mDescriptor = socket(AF_INET, SOCK_STREAM, 0);
+        FileDescriptor = socket(AF_INET, SOCK_STREAM, 0);
 
-        bool _result = (mDescriptor >= 0);
+        bool _result = (FileDescriptor >= 0);
 
         if (_result)
         {
@@ -34,27 +34,27 @@ namespace AsyncBsdSocketLib
             // Configuring socket option for reusing the port
             _result =
                 (setsockopt(
-                     mDescriptor,
+                     FileDescriptor,
                      SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT,
                      &_opt,
                      sizeof(_opt)) == 0);
 
             if (_result)
             {
-                mAddress.sin_addr.s_addr = inet_addr(mIpAddress.c_str());
+                mAddress.sin_addr.s_addr = inet_addr(IpAddress.c_str());
                 mAddress.sin_family = AF_INET;
-                mAddress.sin_port = htons(mPort);
+                mAddress.sin_port = htons(Port);
 
                 //! \remark Binding the socket to the port
                 _result =
                     (bind(
-                         mDescriptor,
+                         FileDescriptor,
                          (struct sockaddr *)&mAddress,
                          sizeof(mAddress)) == 0);
 
                 if (_result)
                 {
-                    _result = (listen(mDescriptor, cBacklog) == 0);
+                    _result = (listen(FileDescriptor, cBacklog) == 0);
                 }
             }
         }
@@ -68,7 +68,7 @@ namespace AsyncBsdSocketLib
 
         mConnection =
             accept(
-                mDescriptor,
+                FileDescriptor,
                 (struct sockaddr *)&mAddress,
                 (socklen_t *)&_addressLength);
 
@@ -96,7 +96,7 @@ namespace AsyncBsdSocketLib
         _flags |= O_NONBLOCK;
 
         // Set back the flags
-        int _returnCode = fcntl(mDescriptor, F_SETFL, _flags);
+        int _returnCode = fcntl(FileDescriptor, F_SETFL, _flags);
         bool _result = (_returnCode != -1);
 
         return _result;

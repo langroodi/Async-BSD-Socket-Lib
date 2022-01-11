@@ -12,7 +12,7 @@ namespace AsyncBsdSocketLib
 
     int TcpClient::Connection() const noexcept
     {
-        return mDescriptor;
+        return FileDescriptor;
     }
 
     bool TcpClient::IsConnected() const noexcept
@@ -22,15 +22,15 @@ namespace AsyncBsdSocketLib
 
     bool TcpClient::TrySetup() noexcept
     {
-        mDescriptor = socket(AF_INET, SOCK_STREAM, 0);
+        FileDescriptor = socket(AF_INET, SOCK_STREAM, 0);
 
-        bool _result = (mDescriptor >= 0);
+        bool _result = (FileDescriptor >= 0);
 
         if (_result)
         {
-            mAddress.sin_addr.s_addr = inet_addr(mIpAddress.c_str());
+            mAddress.sin_addr.s_addr = inet_addr(IpAddress.c_str());
             mAddress.sin_family = AF_INET;
-            mAddress.sin_port = htons(mPort);
+            mAddress.sin_port = htons(Port);
         }
 
         return _result;
@@ -39,7 +39,7 @@ namespace AsyncBsdSocketLib
     bool TcpClient::TryConnect() noexcept
     {
         mIsConnected = (connect(
-                            mDescriptor,
+                            FileDescriptor,
                             (struct sockaddr *)&mAddress,
                             sizeof(mAddress)) == 0);
 

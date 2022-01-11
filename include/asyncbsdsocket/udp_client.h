@@ -64,7 +64,7 @@ namespace AsyncBsdSocketLib
 
             ssize_t _result =
                 sendto(
-                    mDescriptor,
+                    FileDescriptor,
                     buffer.data(),
                     N,
                     _flags,
@@ -95,7 +95,7 @@ namespace AsyncBsdSocketLib
 
             ssize_t _result =
                 recvfrom(
-                    mDescriptor,
+                    FileDescriptor,
                     buffer.data(),
                     N,
                     _flags,
