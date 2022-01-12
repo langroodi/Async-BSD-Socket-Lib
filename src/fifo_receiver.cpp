@@ -19,6 +19,12 @@ namespace AsyncBsdSocketLib
         const mode_t cMode = 0666;
         bool _result = mkfifo(mPathname.c_str(), cMode);
 
+        // If got 'bad file description' error for the first time, try once.
+        if (errno == EBADF)
+        {
+            _result = mkfifo(mPathname.c_str(), cMode);
+        }
+
         if (_result)
         {
             FileDescriptor = open(mPathname.c_str(), O_RDONLY | O_NONBLOCK);

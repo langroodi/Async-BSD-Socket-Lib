@@ -9,7 +9,7 @@ namespace AsyncBsdSocketLib
     class FifoTest : public testing::Test
     {
     private:
-        const std::string cPathname = "/tmp/fifotest";
+        const std::string cPathname = "fifotest";
 
     protected:
         FifoReceiver Server;
