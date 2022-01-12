@@ -1,10 +1,11 @@
 # Asynchronous BSD Socket Library
 ![example workflow](https://github.com/langroodi/Async-BSD-Socket-Lib/actions/workflows/cmake.yml/badge.svg)
 
-This is a non-blocking BSD (POSIX) network socket library over TCP/IP for Liunx. The library is a wrapper around the POSIX socket programming system calls which hires Linux kernel edge-triggered polling mechanism (epoll) to provide an async network communication. The library supports following communications:
+This is a non-blocking BSD (POSIX) network socket library over TCP/IP and Inter-process Communication (IPC) for Liunx. The library is a wrapper around the POSIX socket programming and IPC system calls which hires Linux kernel edge-triggered polling mechanism (epoll) to provide an async network/inter-process communication. The library supports following communications:
 - TCP
 - UDP Unicast
 - UDP Multicast
+- FIFO (Named Pipe)
 
 ## Dependecies
 The current library dependencies are as follows:
@@ -12,7 +13,7 @@ The current library dependencies are as follows:
 - Cmake mimimum version: 3.14
 - Clang C++ Compiler: 10.0.0
 - Google Test: v1.11.0
-- Linux kernel minimum version: 2.5.44
+- Linux kernel minimum version: 2.6
 
 ## Documentation
 The library documentation is available from [GitHub Pages](https://langroodi.github.io/Async-BSD-Socket-Lib/) which is powered by [Doxygen](https://www.doxygen.nl/index.html) .

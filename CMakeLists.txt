@@ -59,6 +59,8 @@ add_library(
   ${source_dir}/tcp_client.cpp
   ${source_dir}/tcp_listener.cpp
   ${source_dir}/udp_client.cpp
+  ${source_dir}/fifo_sender.cpp
+  ${source_dir}/fifo_receiver.cpp
 )
 
 target_include_directories(async_bsd_socket_lib
@@ -75,6 +77,7 @@ if(build_tests)
     ${test_dir}/udp_unicast_test.cpp
     ${test_dir}/udp_multicast_test.cpp
     ${test_dir}/poller_test.cpp
+    ${test_dir}/fifo_test.cpp
   )
 
   target_link_libraries(

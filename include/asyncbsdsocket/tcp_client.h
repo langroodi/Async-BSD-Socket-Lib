@@ -44,7 +44,7 @@ namespace AsyncBsdSocketLib
         template <std::size_t N>
         ssize_t Send(const std::array<uint8_t, N> &buffer) const noexcept
         {
-            bool _result =
+            ssize_t _result =
                 send(
                     FileDescriptor,
                     buffer.data(),
