@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('tcp__client_8h_source.html',''); initR
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        template &lt;std::<span class="keywordtype">size_t</span> N&gt;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classAsyncBsdSocketLib_1_1TcpClient.html#aa89425dd13c8dcf6ba534b1c088decac">   45</a></span>        ssize_t <a class="code hl_function" href="classAsyncBsdSocketLib_1_1TcpClient.html#aa89425dd13c8dcf6ba534b1c088decac">Send</a>(const std::array&lt;uint8_t, N&gt; &amp;buffer) const noexcept</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordtype">bool</span> _result =</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            ssize_t _result =</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                send(</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                    <a class="code hl_variable" href="classAsyncBsdSocketLib_1_1Communicator.html#a3c96ce29c77815901fe5e01d00d25d97">FileDescriptor</a>,</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    buffer.data(),</div>

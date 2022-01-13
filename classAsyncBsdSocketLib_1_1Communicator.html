@@ -110,10 +110,12 @@ Inheritance diagram for AsyncBsdSocketLib::Communicator:</div>
  <div class="center">
   <img src="classAsyncBsdSocketLib_1_1Communicator.png" usemap="#AsyncBsdSocketLib::Communicator_map" alt=""/>
   <map id="AsyncBsdSocketLib::Communicator_map" name="AsyncBsdSocketLib::Communicator_map">
-<area href="classAsyncBsdSocketLib_1_1NetworkSocket.html" title="TCP/IP network socket." alt="AsyncBsdSocketLib::NetworkSocket" shape="rect" coords="224,56,438,80"/>
-<area href="classAsyncBsdSocketLib_1_1TcpClient.html" title="TCP client to connect to a TcpListener." alt="AsyncBsdSocketLib::TcpClient" shape="rect" coords="0,112,214,136"/>
-<area href="classAsyncBsdSocketLib_1_1TcpListener.html" title="TCP listener (server) to accept a TcpClient." alt="AsyncBsdSocketLib::TcpListener" shape="rect" coords="224,112,438,136"/>
-<area href="classAsyncBsdSocketLib_1_1UdpClient.html" title="UDP client which can play both client and listener roles." alt="AsyncBsdSocketLib::UdpClient" shape="rect" coords="448,112,662,136"/>
+<area href="classAsyncBsdSocketLib_1_1FifoReceiver.html" title="FIFO (named pipe) IPC receiver (reader)" alt="AsyncBsdSocketLib::FifoReceiver" shape="rect" coords="0,56,214,80"/>
+<area href="classAsyncBsdSocketLib_1_1FifoSender.html" title="FIFO (named pipe) IPC sender (writer)" alt="AsyncBsdSocketLib::FifoSender" shape="rect" coords="224,56,438,80"/>
+<area href="classAsyncBsdSocketLib_1_1NetworkSocket.html" title="TCP/IP network socket." alt="AsyncBsdSocketLib::NetworkSocket" shape="rect" coords="448,56,662,80"/>
+<area href="classAsyncBsdSocketLib_1_1TcpClient.html" title="TCP client to connect to a TcpListener." alt="AsyncBsdSocketLib::TcpClient" shape="rect" coords="224,112,438,136"/>
+<area href="classAsyncBsdSocketLib_1_1TcpListener.html" title="TCP listener (server) to accept a TcpClient." alt="AsyncBsdSocketLib::TcpListener" shape="rect" coords="448,112,662,136"/>
+<area href="classAsyncBsdSocketLib_1_1UdpClient.html" title="UDP client which can play both client and listener roles." alt="AsyncBsdSocketLib::UdpClient" shape="rect" coords="672,112,886,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -168,7 +170,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>FileDescriptor</b></td
 <p>Connection descriptor for sending and receiving. </p>
 <dl class="section return"><dt>Returns</dt><dd>A non-negative value if there is a valid connection; otherwise -1 </dd></dl>
 
-<p>Implemented in <a class="el" href="classAsyncBsdSocketLib_1_1TcpClient.html#aa127f92fd443e39fe31571d681fd7dac">AsyncBsdSocketLib::TcpClient</a>, <a class="el" href="classAsyncBsdSocketLib_1_1TcpListener.html#afd982b73b0511a4f1f6dd9363f26d2b1">AsyncBsdSocketLib::TcpListener</a>, and <a class="el" href="classAsyncBsdSocketLib_1_1UdpClient.html#a3919a2d86a47618dcaa950a924ce2c05">AsyncBsdSocketLib::UdpClient</a>.</p>
+<p>Implemented in <a class="el" href="classAsyncBsdSocketLib_1_1FifoReceiver.html#a4ea5e21bf2646dc7493227ad1c20aa13">AsyncBsdSocketLib::FifoReceiver</a>, <a class="el" href="classAsyncBsdSocketLib_1_1FifoSender.html#ad338c73dbd6278efad22184e56bd3c16">AsyncBsdSocketLib::FifoSender</a>, <a class="el" href="classAsyncBsdSocketLib_1_1TcpClient.html#aa127f92fd443e39fe31571d681fd7dac">AsyncBsdSocketLib::TcpClient</a>, <a class="el" href="classAsyncBsdSocketLib_1_1TcpListener.html#afd982b73b0511a4f1f6dd9363f26d2b1">AsyncBsdSocketLib::TcpListener</a>, and <a class="el" href="classAsyncBsdSocketLib_1_1UdpClient.html#a3919a2d86a47618dcaa950a924ce2c05">AsyncBsdSocketLib::UdpClient</a>.</p>
 
 </div>
 </div>
@@ -254,7 +256,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>FileDescriptor</b></td
 <p>Try to setup the communicator. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if the communicator is successfully set up; otherwise false </dd></dl>
 
-<p>Implemented in <a class="el" href="classAsyncBsdSocketLib_1_1TcpClient.html#a286e6a6bd159b7cba320cb003ec22ffa">AsyncBsdSocketLib::TcpClient</a>, <a class="el" href="classAsyncBsdSocketLib_1_1TcpListener.html#a98d97bf29e0d6124b68d94baca8a69ec">AsyncBsdSocketLib::TcpListener</a>, and <a class="el" href="classAsyncBsdSocketLib_1_1UdpClient.html#ab452763a2a45d26d940358bce156c842">AsyncBsdSocketLib::UdpClient</a>.</p>
+<p>Implemented in <a class="el" href="classAsyncBsdSocketLib_1_1FifoReceiver.html#a4d48c3ef239ff8004d248eb662ca8bf0">AsyncBsdSocketLib::FifoReceiver</a>, <a class="el" href="classAsyncBsdSocketLib_1_1FifoSender.html#afbe03fd7e1c760d57b5bce14b0d5facd">AsyncBsdSocketLib::FifoSender</a>, <a class="el" href="classAsyncBsdSocketLib_1_1TcpClient.html#a286e6a6bd159b7cba320cb003ec22ffa">AsyncBsdSocketLib::TcpClient</a>, <a class="el" href="classAsyncBsdSocketLib_1_1TcpListener.html#a98d97bf29e0d6124b68d94baca8a69ec">AsyncBsdSocketLib::TcpListener</a>, and <a class="el" href="classAsyncBsdSocketLib_1_1UdpClient.html#ab452763a2a45d26d940358bce156c842">AsyncBsdSocketLib::UdpClient</a>.</p>
 
 </div>
 </div>

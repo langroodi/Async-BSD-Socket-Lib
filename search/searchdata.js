@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
   0: "cdfinprstu",
-  1: "cnptu",
-  2: "cdinprstu",
+  1: "cfnptu",
+  2: "cdfinprstu",
   3: "fip"
 };
 

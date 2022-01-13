@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['send_0',['Send',['../classAsyncBsdSocketLib_1_1TcpClient.html#aa89425dd13c8dcf6ba534b1c088decac',1,'AsyncBsdSocketLib::TcpClient::Send()'],['../classAsyncBsdSocketLib_1_1TcpListener.html#a20cf0c9aeaff91cba5dcadd9c5751f4c',1,'AsyncBsdSocketLib::TcpListener::Send()'],['../classAsyncBsdSocketLib_1_1UdpClient.html#a361c2dab3d0e89df2cd84e2d01d98dbd',1,'AsyncBsdSocketLib::UdpClient::Send()']]]
+  ['receive_0',['Receive',['../classAsyncBsdSocketLib_1_1FifoReceiver.html#a0c01adfd83e17c81db1c68ee29c60708',1,'AsyncBsdSocketLib::FifoReceiver::Receive()'],['../classAsyncBsdSocketLib_1_1TcpClient.html#ad05d6927a63611bbcaae798a8a9e090e',1,'AsyncBsdSocketLib::TcpClient::Receive()'],['../classAsyncBsdSocketLib_1_1TcpListener.html#ade64fd30555fd3bac464ae6066aae1ce',1,'AsyncBsdSocketLib::TcpListener::Receive()'],['../classAsyncBsdSocketLib_1_1UdpClient.html#ae7d0719295cbdc1367dd6505eb257dab',1,'AsyncBsdSocketLib::UdpClient::Receive()']]]
 ];

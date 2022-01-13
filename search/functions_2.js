@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['isconnected_0',['IsConnected',['../classAsyncBsdSocketLib_1_1TcpClient.html#a9b32c89b6633f7391eb829a03c2ffee5',1,'AsyncBsdSocketLib::TcpClient']]]
+  ['fiforeceiver_0',['FifoReceiver',['../classAsyncBsdSocketLib_1_1FifoReceiver.html#a44cdbc7ffbf2733b4d22ce8937f7c510',1,'AsyncBsdSocketLib::FifoReceiver']]],
+  ['fifosender_1',['FifoSender',['../classAsyncBsdSocketLib_1_1FifoSender.html#a7c63d5341b7452017c804c679a42477f',1,'AsyncBsdSocketLib::FifoSender']]]
 ];
