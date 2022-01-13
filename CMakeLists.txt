@@ -92,12 +92,23 @@ endif()
 
 if(build_samples)
   add_executable(
-    async_bsd_socket_lib_samples
+    async_bsd_socket_lib_poller_sample
+    ${sample_dir}/poller_sample.cpp
+  )
+
+  add_executable(
+    async_bsd_socket_lib_fifo_sample
     ${sample_dir}/poller_sample.cpp
   )
 
   target_link_libraries(
-    async_bsd_socket_lib_samples
+    async_bsd_socket_lib_poller_sample
+    pthread
+    async_bsd_socket_lib
+  )
+
+  target_link_libraries(
+    async_bsd_socket_lib_fifo_sample
     pthread
     async_bsd_socket_lib
   )
