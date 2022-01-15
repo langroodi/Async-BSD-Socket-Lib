@@ -1,0 +1,15 @@
+NetworkSocketTest.TcpClientConstructor 1 0.00589156
+NetworkSocketTest.TcpListenerConstructor 1 0.00290648
+NetworkSocketTest.UdpClientConstructor 1 0.00206839
+TcpCommunicationTest.Connection 1 0.00230778
+TcpCommunicationTest.ServerSendClientReceive 1 0.00220219
+TcpCommunicationTest.ClientSendServerReceive 1 0.00238718
+UdpUnicastTest.CheckSetup 1 0.00207759
+UdpUnicastTest.Echo 1 0.00220609
+UdpMulticastTest.SetupCheck 1 0.00205259
+UdpMulticastTest.AliceBobTalk 1 0.00219529
+UdpMulticastTest.AliceBobEveTalk 1 0.00202869
+PollerTest.ServerClientPoll 1 0.00222169
+FifoTest.DescriptorValidity 1 0.00212479
+FifoTest.TransmissionValidity 1 0.00202679
+---
