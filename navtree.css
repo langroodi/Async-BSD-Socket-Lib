@@ -20,10 +20,7 @@
 }
 
 #nav-tree .selected {
-  background-image: url('tab_a.png');
-  background-repeat:repeat-x;
-  color: #fff;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 1.0);
+  background-color: #161b22;
 }
 
 #nav-tree img {
@@ -95,15 +92,14 @@
 }
 
 .ui-resizable-e {
-  background-image:url("splitbar.png");
-  background-size:100%;
-  background-repeat:repeat-y;
-  background-attachment: scroll;
   cursor:ew-resize;
   height:100%;
   right:0;
   top:0;
   width:6px;
+  border-left-style: solid;
+  border-left-color: #30363d;
+  border-left-width: 1px;
 }
 
 .ui-resizable-handle {
@@ -118,9 +114,7 @@
 }
 
 #nav-tree {
-  background-image:url('nav_h.png');
-  background-repeat:repeat-x;
-  background-color: #F9FAFC;
+  background-color: #0d1117;
   -webkit-overflow-scrolling : touch; /* iOS 5+ */
 }
 
