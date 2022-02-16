@@ -98,7 +98,7 @@ if(build_samples)
 
   add_executable(
     async_bsd_socket_lib_fifo_sample
-    ${sample_dir}/poller_sample.cpp
+    ${sample_dir}/fifo_sample.cpp
   )
 
   target_link_libraries(
