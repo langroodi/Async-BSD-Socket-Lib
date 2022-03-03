@@ -11,7 +11,9 @@ This is a non-blocking BSD (POSIX) network socket library over TCP/IP and Inter-
 The current library dependencies are as follows:
 - Cpp Standard: 14
 - Cmake mimimum version: 3.14
-- Clang C++ Compiler: 10.0.0
+- Compiler:
+    - GCC C/C++ Compiler (x86-64 Linux GNU): 9.3.0; or
+    - Clang C/C++ Compiler (x86-64 PC Linux GNU): 10.0.0
 - Google Test: v1.11.0
 - Linux kernel minimum version: 2.6
 
