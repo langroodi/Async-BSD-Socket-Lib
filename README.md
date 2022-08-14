@@ -12,9 +12,9 @@ The current library dependencies are as follows:
 - Cpp Standard: 14
 - Cmake mimimum version: 3.14
 - Compiler:
-    - GCC C/C++ Compiler (x86-64 Linux GNU): 9.3.0; or
-    - Clang C/C++ Compiler (x86-64 PC Linux GNU): 10.0.0
-- Google Test: v1.11.0
+    - GCC C/C++ Compiler (x86-64 Linux GNU): 11.2.0; or
+    - Clang C/C++ Compiler (x86-64 PC Linux GNU): 14.0.0
+- Google Test: v1.12.1
 - Linux kernel minimum version: 2.6
 
 ## Documentation
