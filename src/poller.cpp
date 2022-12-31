@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <sys/epoll.h>
+#include <cerrno>
 #include <stdexcept>
 #include "asyncbsdsocket/poller.h"
 
@@ -20,6 +21,22 @@ namespace AsyncBsdSocketLib
     Poller::~Poller() noexcept
     {
         close(mFileDescriptor);
+    }
+
+    bool Poller::tryModifyAsSenderReceiver(int connectionDescriptor)
+    {
+        struct epoll_event _event;
+        _event.events = EPOLLIN | EPOLLOUT | EPOLLET;
+        _event.data.fd = connectionDescriptor;
+
+        bool _result =
+            (epoll_ctl(
+                 mFileDescriptor,
+                 EPOLL_CTL_MOD,
+                 connectionDescriptor,
+                 &_event) >= 0);
+
+        return _result;
     }
 
     bool Poller::TryAddListener(
@@ -66,6 +83,17 @@ namespace AsyncBsdSocketLib
             mSenders[_connectionDescriptor] = callback;
             ++mEventCounter;
         }
+        else if (errno == EEXIST &&
+                 mReceivers.find(_connectionDescriptor) != mReceivers.end())
+        {
+            // Try to modify the socket if it has been added already as a receiver
+            _result = tryModifyAsSenderReceiver(_connectionDescriptor);
+
+            if (_result)
+            {
+                mSenders[_connectionDescriptor] = callback;
+            }
+        }
 
         return _result;
     }
@@ -89,6 +117,17 @@ namespace AsyncBsdSocketLib
         {
             mReceivers[_connectionDescriptor] = callback;
             ++mEventCounter;
+        }
+        else if (errno == EEXIST &&
+                 mSenders.find(_connectionDescriptor) != mSenders.end())
+        {
+            // Try to modify the socket if it has been added already as a sender
+            _result = tryModifyAsSenderReceiver(_connectionDescriptor);
+
+            if (_result)
+            {
+                mReceivers[_connectionDescriptor] = callback;
+            }
         }
 
         return _result;
@@ -180,6 +219,7 @@ namespace AsyncBsdSocketLib
         for (int i = 0; i < _fdNo; ++i)
         {
             int _fd = _events[i].data.fd;
+            uint32_t _event = _events[i].events;
 
             auto _iterator = mListeners.find(_fd);
             if (_iterator != mListeners.end())
@@ -189,14 +229,16 @@ namespace AsyncBsdSocketLib
             }
 
             _iterator = mSenders.find(_fd);
-            if (_iterator != mSenders.end())
+            if (_iterator != mSenders.end() &&
+                static_cast<EPOLL_EVENTS>(_event & EPOLLOUT) == EPOLLOUT)
             {
                 // Launching the callback
                 (_iterator->second)();
             }
 
             _iterator = mReceivers.find(_fd);
-            if (_iterator != mReceivers.end())
+            if (_iterator != mReceivers.end() &&
+                static_cast<EPOLL_EVENTS>(_event & EPOLLIN) == EPOLLIN)
             {
                 // Launching the callback
                 (_iterator->second)();
