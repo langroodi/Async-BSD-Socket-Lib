@@ -96,7 +96,7 @@ namespace AsyncBsdSocketLib
         _flags |= O_NONBLOCK;
 
         // Set back the flags
-        int _returnCode = fcntl(FileDescriptor, F_SETFL, _flags);
+        int _returnCode = fcntl(mConnection, F_SETFL, _flags);
         bool _result = (_returnCode != -1);
 
         return _result;
