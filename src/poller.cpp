@@ -26,7 +26,7 @@ namespace AsyncBsdSocketLib
     bool Poller::tryModifyAsSenderReceiver(int connectionDescriptor)
     {
         struct epoll_event _event;
-        _event.events = EPOLLIN | EPOLLOUT | EPOLLET;
+        _event.events = EPOLLIN | EPOLLOUT;
         _event.data.fd = connectionDescriptor;
 
         bool _result =
