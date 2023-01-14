@@ -101,6 +101,11 @@ if(build_samples)
     ${sample_dir}/fifo_sample.cpp
   )
 
+  add_executable(
+    async_bsd_socket_lib_multicast_sample
+    ${sample_dir}/multicast_sample.cpp
+  )
+
   target_link_libraries(
     async_bsd_socket_lib_poller_sample
     pthread
@@ -109,6 +114,12 @@ if(build_samples)
 
   target_link_libraries(
     async_bsd_socket_lib_fifo_sample
+    pthread
+    async_bsd_socket_lib
+  )
+
+  target_link_libraries(
+    async_bsd_socket_lib_multicast_sample
     pthread
     async_bsd_socket_lib
   )
