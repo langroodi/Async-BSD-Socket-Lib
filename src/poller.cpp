@@ -56,6 +56,7 @@ namespace AsyncBsdSocketLib
 
         if (_result)
         {
+            std::lock_guard<std::mutex> _lock(mMutex);
             mListeners[_socketDescriptor] = callback;
             ++mEventCounter;
         }
@@ -80,6 +81,7 @@ namespace AsyncBsdSocketLib
 
         if (_result)
         {
+            std::lock_guard<std::mutex> _lock(mMutex);
             mSenders[_connectionDescriptor] = callback;
             ++mEventCounter;
         }
@@ -115,6 +117,7 @@ namespace AsyncBsdSocketLib
 
         if (_result)
         {
+            std::lock_guard<std::mutex> _lock(mMutex);
             mReceivers[_connectionDescriptor] = callback;
             ++mEventCounter;
         }
@@ -150,6 +153,7 @@ namespace AsyncBsdSocketLib
 
         if (_result)
         {
+            std::lock_guard<std::mutex> _lock(mMutex);
             mListeners.erase(_socketDescriptor);
             --mEventCounter;
         }
@@ -174,6 +178,7 @@ namespace AsyncBsdSocketLib
 
         if (_result)
         {
+            std::lock_guard<std::mutex> _lock(mMutex);
             mSenders.erase(_connectionDescriptor);
             --mEventCounter;
         }
@@ -198,6 +203,7 @@ namespace AsyncBsdSocketLib
 
         if (_result)
         {
+            std::lock_guard<std::mutex> _lock(mMutex);
             mReceivers.erase(_connectionDescriptor);
             --mEventCounter;
         }
